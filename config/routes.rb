@@ -1,7 +1,7 @@
 IsoconfApp::Application.routes.draw do
 
   devise_for :users
-  root :to => "home#index"
+  root "static_pages#home"
 
   match '/home', to: 'static_pages#home', via: 'get'
   match '/program', to: 'static_pages#program', via: 'get'
