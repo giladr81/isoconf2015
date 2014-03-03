@@ -1,4 +1,13 @@
 IsoconfApp::Application.routes.draw do
+
+  devise_for :users
+  root :to => "home#index"
+
+  match '/home', to: 'static_pages#home', via: 'get'
+  match '/program', to: 'static_pages#program', via: 'get'
+  match '/venue', to: 'static_pages#venue', via: 'get'
+  match '/isotopes-organizers', to: 'static_pages#organizers', via: 'get'
+  match '/isotopes-payment', to: 'static_pages#payment', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
