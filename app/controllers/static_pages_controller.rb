@@ -13,4 +13,8 @@ class StaticPagesController < ApplicationController
 
   def payment
   end
+
+  def construction
+  end
+  
 end

@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 gem 'rails', '4.0.3'
-gem 'bootstrap-sass', '2.3.2.0'
+
+# gem 'sass-rails', '>= 3.2'
+gem 'bootstrap-sass', '~> 3.1.1'
 #ruby-gemset=isoconf2015
 
 group :development do

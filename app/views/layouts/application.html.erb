@@ -8,19 +8,25 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-	<%= render 'layouts/header' %>
-	<div class="container">
-		<% if notice %>
+	<% if notice %>
 			<p class="alert alert-notice"><%= notice %></p>
-		<% end %>
-		<% if alert %>
-			<p class="alert alert-error"><%= alert %></p>
-		<% end %>
+	<% end %>
+	<% if alert %>
+		<p class="alert alert-error"><%= alert %></p>
+	<% end %>
+	<%= render 'layouts/header' %>
+	<h1 class="center">Under Construction</h1>
+	<!-- div class="container">
+		<div class="row">
+			<div class="col-sm-3 sidemenu">
+				<%= render 'layouts/menu' %>
+			</div>
 
-		<%= yield %>
-
-		<%= render 'layouts/footer' %>
-	</div>
-
+			<div class="col-sm-9 content">
+				<%= yield %>
+			</div>
+		</div>
+	<%= render 'layouts/footer' %>
+	</div -->
 </body>
 </html>
