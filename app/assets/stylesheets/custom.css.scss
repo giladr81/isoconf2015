@@ -7,17 +7,24 @@ $grayMediumLight: #eaeaea;
 	}
 }*/
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* universal */
 html {
 	overflow-y: scroll;
-	width: 935px;
+	width: 941px;
 	margin: 0 auto;
 	padding: 2px;
 }
 
 body {
-	margin: 0 auto;
 	font-size: 1.15em;
+	background-color: #5b7393;
+	height: 800px;
 }
 
 .center {
@@ -28,7 +35,9 @@ body {
 }
 
 .container {
-	max-width: 935px;
+	max-width: 941px;
+	background-color: #FFE7B3;
+	height: 75%;
 }
 
 .content {
@@ -38,7 +47,9 @@ body {
 /* side menu */
 .sidemenu {
 	width: 200px;
-	padding: 10px 0;
+	margin: 10px 0 0 5px;
+	padding: 0;
+	background-color: #f0f0f0; 
 	/* border: 1px solid $grayMediumLight; */
 }
 
