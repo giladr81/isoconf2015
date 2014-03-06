@@ -7,7 +7,6 @@ html {
 
 body {
 	font-size: 1.25em;
-	/* background-color: #5b7393; */
 	width: 940px;
 	height: 800px;
 	margin: 10px auto;
@@ -35,9 +34,9 @@ body {
 		width: 740px;
 		text-align: justify;
 		h4 {
-			color: #0088cc; /* #6666ff; */
+			color: #0088cc;
 			padding-bottom: 5px;
-			border-bottom: 1px solid #003366; /* #2b5dce; */
+			border-bottom: 1px solid #003366;
 		font-weight: bold;
 		}
 	}
@@ -50,9 +49,6 @@ body {
 	width: 200px;
 	font-size: 0.95em;
 	padding-left: 5px;
-	/* margin: 10px 0 0 5px;
-	padding: 0; 
-	background-color: #f0f0f0; */
 	ul.nav-tabs {
 		margin-top: 15px;
 		border-radius: 4px;
@@ -66,33 +62,32 @@ body {
 				margin: 0;
 				padding: 8px 16px;
 				border-radius: 0;
+				&:hover {
+					background: #0471b2;
+					border: 1px solid #0471b2;
+					color: #fff;	
+				}
 			}
-			a:hover {
-				background: #0471b2;
-				border: 1px solid #0471b2;
-				color: #fff;
+			&.active {
+				a {
+					color: #fff;
+					background: #0088cc;
+					border: 1px solid #0088cc;
+					font-weight: bold;
+				}
 			}
-		}
-		
-		li.active {
-			a {
-				color: #fff;
-				background: #0088cc;
-				border: 1px solid #0088cc;
-				font-weight: bold;
-			}
-		}
-		
-		li:first-child {
-			border-top: none;
-			a {
-				border-radius: 4px 4px 0 0;
-			}
-		}
 
-		li:last-child {
-			a {
-				border-radius: 0 0 4px 4px;
+			&:first-child {
+				border-top: none;
+				a {
+					border-radius: 4px 4px 0 0;
+				}				
+			}
+
+			&:last-child {
+				a {
+					border-radius: 0 0 4px 4px;
+				}				
 			}
 		}
 	}
