@@ -3,15 +3,14 @@
 /* universal */
 html {
 	overflow-y: scroll;
-	width: 941px;
-	margin: 0 auto;
-	padding: 2px;
 }
 
 body {
-	font-size: 1.15em;
+	font-size: 1.25em;
 	/* background-color: #5b7393; */
+	width: 940px;
 	height: 800px;
+	margin: 10px auto;
 }
 
 .center {
@@ -22,26 +21,29 @@ body {
 }
 
 .container {
-	max-width: 941px;
+	max-width: 940px; 
 	/* background-color: #FFE7B3; */
 	height: 75%;
+	padding: 0;
 }
 
-.content {
-	padding-right: 0;
+.row {
+	max-width: 940px;
+	margin: 0;
 }
 
 h4 {
-	color: #6666ff;
+	color: #0088cc; /* #6666ff; */
 	padding-bottom: 5px;
-	border-bottom: 1px solid #2b5dce;
+	border-bottom: 1px solid #003366; /* #2b5dce; */
+	font-weight: bold;
 }
 
 /* side menu */
 .sidemenu {
-	width: 200px; /*
-	margin: 10px 0 0 5px;
-	padding: 0;
+	width: 200px;
+	/* margin: 10px 0 0 5px;
+	padding: 0; 
 	background-color: #f0f0f0; */
 	ul.nav-tabs {
 		margin-top: 15px;
@@ -85,10 +87,10 @@ h4 {
 /* footer */
 
 footer {
-  /* margin-top: 45px; */
-  padding-top: -20px;
-  border-top: 1px solid #ff0000; /*#eaeaea;*/
-  /* color: #999; */
+  /* margin-top: 45px;
+  padding-top: -20px; */
+  border-top: 1px solid #eaeaea;
+  color: #999;
   small {
   	float: left;
 	}

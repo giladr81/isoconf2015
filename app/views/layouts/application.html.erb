@@ -17,16 +17,19 @@
 	<%= render 'layouts/header' %>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3 sidemenu">
+			<div class="col-sm-3 col-md-3 sidemenu">
 				<%= render 'layouts/menu' %>
 			</div>
 
-			<div class="col-sm-9 content">
+			<div class="col-sm-9 col-md-9 content">
 				<%= yield %>
 			</div>
 		</div>
 	
 	</div>
-	<%= render 'layouts/footer' %>
+
+	<div class="footer">
+		<%= render 'layouts/footer' %>
+	</div>
 </body>
 </html>
