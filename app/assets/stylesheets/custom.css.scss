@@ -44,22 +44,31 @@ body {
 	padding-right: 0;
 }
 
+h4 {
+	color: #6666ff;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #2b5dce;
+}
+
 /* side menu */
 .sidemenu {
 	width: 200px;
 	margin: 10px 0 0 5px;
 	padding: 0;
 	background-color: #f0f0f0; 
+	li {
+		border-bottom: 1px solid #cccccc;
+	}
 	/* border: 1px solid $grayMediumLight; */
 }
 
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
+  /* margin-top: 45px; */
+  padding-top: -20px;
+  border-top: 1px solid #ff0000; /*#eaeaea;*/
+  /* color: #999; */
   small {
   	float: left;
 	}
