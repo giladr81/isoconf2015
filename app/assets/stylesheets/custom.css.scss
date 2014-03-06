@@ -27,7 +27,7 @@ body {
 
 .container {
 	max-width: 940px; 
-	/* background-color: #FFE7B3; */
+	background-color: rgba(252, 220, 147, 0.7); 
 	height: 75%;
 	padding: 0;
 
@@ -49,6 +49,7 @@ body {
 .sidemenu {
 	width: 200px;
 	font-size: 0.95em;
+	padding-left: 5px;
 	/* margin: 10px 0 0 5px;
 	padding: 0; 
 	background-color: #f0f0f0; */
@@ -60,18 +61,25 @@ body {
 		li {
 			margin: 0;
 			border-top: 1px solid #ccc;
+			letter-spacing: 0.8px;
 			a {
 				margin: 0;
 				padding: 8px 16px;
 				border-radius: 0;
-			}			
+			}
+			a:hover {
+				background: #0471b2;
+				border: 1px solid #0471b2;
+				color: #fff;
+			}
 		}
 		
 		li.active {
-			a, a:hover {
+			a {
 				color: #fff;
 				background: #0088cc;
-				border: 1px dotted #0088cc;
+				border: 1px solid #0088cc;
+				font-weight: bold;
 			}
 		}
 		
