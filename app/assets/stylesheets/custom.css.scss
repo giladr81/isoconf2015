@@ -6,7 +6,7 @@ html {
 }
 
 body {
-	font-size: 1.25em;
+	font-size: 11pt;
 	width: 940px;
 	height: 800px;
 	margin: 10px auto;
@@ -25,15 +25,16 @@ body {
 }
 
 .container {
-	max-width: 940px; 
-	background-color: rgba(252, 220, 147, 0.7); 
+	max-width: 940px;
+
+	background-color: rgba(252, 220, 147, 0.4);
 	height: 75%;
 	padding: 0;
 
 	.content {
-		width: 740px;
+		width: 715px;
 		text-align: justify;
-		h4 {
+		h3 {
 			color: #0088cc;
 			padding-bottom: 5px;
 			border-bottom: 1px solid #003366;
@@ -46,7 +47,7 @@ body {
 
 /* side menu */
 .sidemenu {
-	width: 200px;
+	width: 225px;
 	font-size: 0.95em;
 	padding-left: 5px;
 	ul.nav-tabs {
