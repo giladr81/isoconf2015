@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-	before_action :authenticate_user!, only: [:index, :show, :edit, :update]
+	before_action :authenticate_user!, only: [:new, :index, :show, :edit, :update]
 
 	def index
 		# @results = Registration.order(:id)
