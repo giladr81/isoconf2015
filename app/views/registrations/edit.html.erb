@@ -1,0 +1,23 @@
+<% provide(:title, 'Edit Participant Data') %>
+<h3>Editing data for <%= @result.title %> <%= @result.lastName %> <%= @result.firstName %></h3>
+<%= simple_form_for @result do |f| %>
+
+	<%= f.input :title, collection: [['Mr.','Mr.'], ['Ms.', 'Ms.'], ['Mrs.', 'Mrs.'], ['Miss.', 'Miss.'], ['Dr.', 'Dr.'], ['Prof.', 'Prof.']] %>
+	<%= f.input :firstName, label: "First Name" %>
+	<%= f.input :lastName, label: "Last Name" %>
+	<%= f.input :email, label: "E-mail", placeholder: 'user@domain.com' %>
+	<%= f.input :institutionalAffiliation, label: "Institutional Affiliation" %>
+	<%= f.input :accommodationType, label: "I would like to be accommodated in", collection:  [['Double Room', 'Double Room'], ['Single Room', 'Single Room'], ['No Accommodation', 'No Accommodation']], as: :radio_buttons %>
+	<%= f.input :doubleRoomShare, label: "Double room shared with"%>
+	I am planning to be accompanied by <%= f.input_field :accompaniedBy %> persons
+
+	<br />I would like to have: <br />
+	<%= f.check_box :presentationPoster, label: 'Poster' %> A poster presentation<br />
+	<%= f.check_box :presentationOral, label: 'Poster' %> An oral presentation<br />
+
+	<%= f.input :extraNightsBefoe, label: "I would need extra nights before" %>
+	<%= f.input :extraNightsAfter, label: "I would need extra nights after" %> <br />
+	<%= f.input :specialRequests, label: "Special Requests" %>
+
+	<%= f.button :submit %>
+<% end %>
