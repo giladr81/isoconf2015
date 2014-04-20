@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  firstName: MyString
+  lastName: MyString
+  email: MyString
+  institutionalAffiliation: MyString
+  accommodationType: MyString
+  doubleRoomShare: MyString
+  accompaniedBy: 1
+  presentationPoster: false
+  presentationOral: false
+  extraNightsBefoe: 2014-04-12
+  extraNightsAfter: 2014-04-12
+  specialRequests: MyString
+
+two:
+  title: MyString
+  firstName: MyString
+  lastName: MyString
+  email: MyString
+  institutionalAffiliation: MyString
+  accommodationType: MyString
+  doubleRoomShare: MyString
+  accompaniedBy: 1
+  presentationPoster: false
+  presentationOral: false
+  extraNightsBefoe: 2014-04-12
+  extraNightsAfter: 2014-04-12
+  specialRequests: MyString

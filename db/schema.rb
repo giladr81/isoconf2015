@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303210242) do
+ActiveRecord::Schema.define(version: 20140412161708) do
+
+  create_table "registrations", force: true do |t|
+    t.string   "title"
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "email"
+    t.string   "institutionalAffiliation"
+    t.string   "accommodationType"
+    t.string   "doubleRoomShare"
+    t.integer  "accompaniedBy"
+    t.boolean  "presentationPoster"
+    t.boolean  "presentationOral"
+    t.date     "extraNightsBefoe"
+    t.date     "extraNightsAfter"
+    t.text     "specialRequests",          limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "registrations", ["email"], name: "index_registrations_on_email", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
