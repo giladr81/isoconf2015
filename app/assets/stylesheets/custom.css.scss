@@ -170,7 +170,9 @@ body {
 					margin-right: 8px;
 				}	
 			}
-			
+		}
+		#user_remember_me {
+			width: auto;
 		}
 	}
 
@@ -219,6 +221,15 @@ body {
     text-align: left;
  }
 
+.help-inline {
+	border: 1px solid;
+	padding: 2px;
+	font-weight: bold;
+	font-size: 0.95em;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+}
 
 
 

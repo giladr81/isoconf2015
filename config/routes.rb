@@ -1,5 +1,6 @@
 IsoconfApp::Application.routes.draw do
   resources :registrations
+  # resources :temp
   devise_for :users
 
   devise_scope :user do 

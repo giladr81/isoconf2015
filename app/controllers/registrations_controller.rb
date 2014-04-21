@@ -2,7 +2,6 @@ class RegistrationsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :index, :show, :edit, :update]
 
 	def index
-		# @results = Registration.order(:id)
 		@results = Registration.all
 		respond_to do |format|
 			format.html
@@ -13,20 +12,19 @@ class RegistrationsController < ApplicationController
 
 	def new
 		@form = Registration.new
-		# render layout: false
 	end
 
 	def show
-		@results = Registration.find(params[:id])
+		@form = Registration.find(params[:id])
 	end
 
 	def edit
-		@result = Registration.find(params[:id])
+		@form = Registration.find(params[:id])
 	end
 
 	def update
-		@result = Registration.find(params[:id])
-		if @result.update_attributes(form_params)
+		@form = Registration.find(params[:id])
+		if @form.update_attributes(form_params)
 			flash[:success] = 'Details updated!'
 			redirect_to root_url
 		else

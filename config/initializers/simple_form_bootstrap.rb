@@ -11,6 +11,21 @@ SimpleForm.setup do |config|
     end
   end
 
+  # from platformatec site
+  config.wrappers :vertical_boolean, tag: 'div', class: 'control-group', error_class: 'has-error' do |b|
+    b.use :html5
+    b.use :placeholder
+
+    b.wrapper tag: 'div', class: 'checkbox' do |ba|
+      ba.use :label_input
+    end
+
+    b.use :error, wrap_with: { tag: 'span', class: 'help-inline' }
+    b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+  end
+
+  ## 
+
   config.wrappers :prepend, tag: 'div', class: "control-group", error_class: 'error' do |b|
     b.use :html5
     b.use :placeholder
