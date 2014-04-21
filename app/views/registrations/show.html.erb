@@ -1,0 +1,14 @@
+<% if current_user %>
+	<h3>Showing details for record no' <%= @results.id %></h3>
+
+	<p> Title: <%= @results.title %><br />
+		First Name: <%= @results.firstName %><br />
+		Last Name: <%= @results.lastName %><br />
+	</p>
+	<%= link_to 'Edit participant details', edit_registration_path %> | 
+	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+	<h3>Access Denied</h3>
+	<p>Stop here!</p>
+	<p>You're not allowed to see this page</p>
+<% end %>

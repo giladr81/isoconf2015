@@ -1,15 +1,14 @@
-<!-- ul class="nav nav-pills nav-stacked">
-	<li class="<%= is_active?(home_path) %>"><%= link_to "Home", home_path %></li>
-	<li class="<%= is_active?(venue_path) %>"><%= link_to "Conference Venue", venue_path %></li>
-	<li class="<%= is_active?(program_path) %>"><%= link_to "Program", program_path %></li>
-	<li class="<%= is_active?(organizers_path) %>"><%= link_to "Organizers Committee", organizers_path %></li>
-	<li class="<%= is_active?(payment_path) %>"><%= link_to "Payment", payment_path %></li>
-</ul -->
-
 <ul class="nav nav-tabs nav-stacked">
 	<li class="<%= is_active?(home_path) %>"><%= link_to "Home", home_path %></li>
 	<li class="<%= is_active?(venue_path) %>"><%= link_to "Conference Venue", venue_path %></li>
 	<li class="<%= is_active?(program_path) %>"><%= link_to "Program", program_path %></li>
 	<li class="<%= is_active?(organizers_path) %>"><%= link_to "Organizing Committee", organizers_path %></li>
+	<% if user_signed_in? %>
+	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Form", new_registration_path %></li>
+
+		<li class="<%= is_active?(registrations_path) %>">
+				<%= link_to "Download Reg Form Data", registrations_path, class: "admin" %>
+		</li>
+	<% end %>
 	<li class="<%= is_active?(payment_path) %>"><%= link_to "Payment", payment_path %></li>
 </ul>	

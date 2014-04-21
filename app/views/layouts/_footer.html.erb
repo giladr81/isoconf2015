@@ -1,14 +1,15 @@
 <footer class="footer">
   <small>
-    <!-- a href="http://railstutorial.org/">Rails Tutorial</a -->
     &copy 2014 All rights reserved - Gilad Rainer
   </small>
-  <!-- nav>
+  <nav>
     <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Admin Login", new_user_session_path %></li>
+      <% end %>
     </ul>
-  </nav -->
+  </nav>
 
 </footer>

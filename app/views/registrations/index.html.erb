@@ -1,0 +1,9 @@
+<% provide(:title, 'Registration Form Data') %>
+<h3>Download registration form data</h3>
+
+<p>
+	<span style="font-weight: bold;">Download:</span>
+	<%= link_to "CSV", registrations_path(format: "csv") %> | 
+	<%= link_to "Excel", registrations_path(format: "xlsx") %>
+</p>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

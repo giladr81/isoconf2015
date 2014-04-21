@@ -8,9 +8,8 @@ html {
 body {
 	font-size: 11pt;
 	width: 960px;
-	height: 800px;
 	margin: 2px auto;
-
+	
 	/* header */
 	.header {
 		background-color: rgba(252, 220, 147, 0.4);
@@ -20,6 +19,9 @@ body {
 
 	/* container */
 	.container {
+		min-height: 500px;
+		max-height: 1400px;
+		
 		max-width: 960px;
 		padding: 0 10px;
 		background-color: rgba(252, 220, 147, 0.4);
@@ -27,8 +29,8 @@ body {
 
 		.content {
 			width: 75%;
-			text-align: justify;
-			padding-right: 0px;
+			/* text-align: justify;
+			padding-right: 0px; */
 			h3 {
 				color: #0088cc;
 				padding-bottom: 5px;
@@ -53,7 +55,11 @@ body {
 				margin: 0;
 				border-top: 1px solid #ccc;
 				letter-spacing: 0.8px;
+				.admin {
+						font-size: 0.9em;
+				}
 				a {
+					
 					margin: 0;
 					padding: 8px 16px;
 					border-radius: 0;
@@ -62,8 +68,13 @@ body {
 						border: 1px solid #0471b2;
 						color: #fff;	
 					}
+
 				}
 				&.active {
+					.admin {
+						font-weight: normal;
+						font-size: 0.9em;
+					}
 					a {
 						color: #fff;
 						background: #0088cc;
@@ -97,31 +108,128 @@ body {
 	  	float: left;
 		}
 
-	  /* ul {
+	  ul {
 	  	float: right;
 	  	list-style: none;
+	  	font-size: 11px;
 	  	li {
 	  		float: left;
 	  		margin-left: 10px;
 	  	}
-	  } */
+	  }
 	}
 
 }
 
+/*
 .center {
 	text-align: center;
 	h1 {
 		margin-bottom: 10px;
 	}
-}
+} */
 
 .row {
 	margin: 0;
 }
 
+/* form */
+.simple_form {
+	label {
+		/* float: left;
+		width: 30%;
+		text-align: right; */
+		margin-top: 7px;
+		margin-right: 5px;
+		margin-bottom: 2px;
 
+	}
 
+	select {
+		margin-bottom: 10px;
+	}
+
+	input {
+		width: 65%;
+		margin-bottom: 10px;
+	}
+	.control-group {
+		.controls {
+			.radio {
+				margin-top: 3px;
+
+				label {
+					/* text-align: left;
+					padding-left: 5px; */
+					display: block;
+					/* width: 55%; */
+				}	
+				input {
+					width: auto;
+					margin-left: 2px;
+					margin-right: 8px;
+				}	
+			}
+		}
+		#user_remember_me {
+			width: auto;
+		}
+	}
+
+	#registration_accompaniedBy {
+		width: 35px;
+	}
+	#registration_presentationPoster {
+		width: 10px;
+	}
+
+	#registration_presentationOral {
+		width: 10px;
+	}
+}
+
+/* flash */
+.alert-error {
+	margin-top: 20px;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+	margin-top: 20px;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+	margin-top: 20px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+	margin-top: 20px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.help-inline {
+	border: 1px solid;
+	padding: 2px;
+	font-weight: bold;
+	font-size: 0.95em;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+}
 
 
 
