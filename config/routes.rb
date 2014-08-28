@@ -4,17 +4,17 @@ IsoconfApp::Application.routes.draw do
   devise_for :users
 
   devise_scope :user do 
-    root to: 'static_pages#home'
+    root to: 'static_pages#construction'
     match '/registrations/user', to: 'devise/registrations#create', via: :post
   end
 
   # root "static_pages#home"
   # root "static_pages#construction"
-  match '/home', to: 'static_pages#home', via: 'get'
-  match '/program', to: 'static_pages#program', via: 'get'
-  match '/venue', to: 'static_pages#venue', via: 'get'
-  match '/organizers', to: 'static_pages#organizers', via: 'get'
-  match '/payment', to: 'static_pages#payment', via: 'get'
+  # match '/home', to: 'static_pages#home', via: 'get'
+  # match '/program', to: 'static_pages#program', via: 'get'
+  # match '/venue', to: 'static_pages#venue', via: 'get'
+  # match '/organizers', to: 'static_pages#organizers', via: 'get'
+  # match '/payment', to: 'static_pages#payment', via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
