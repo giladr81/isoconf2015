@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'simple_form', '3.1.0rc1'
 gem 'axlsx_rails'
+gem 'savon', '~> 2.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
