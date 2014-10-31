@@ -20,7 +20,7 @@ body {
 	/* container */
 	.container {
 		min-height: 500px;
-		max-height: 1400px;
+		max-height: 5000px;
 		
 		max-width: 960px;
 		padding: 0 10px;
@@ -134,6 +134,45 @@ body {
 }
 
 /* form */
+.reg_form {
+	margin-top: 25px;
+	.details {
+		@extend .form-control;
+		border: 3px solid #bbb;
+		width: 75%;
+		margin-bottom: 15px;
+		height: auto !important;
+	}
+	.radios_checks_label {
+		width: 35%;
+		margin-top: 5px;
+		margin-left: 10px;
+	}
+}
+
+input, textarea, select {
+	border: 1px solid #bbb;
+	margin-right: 100%;
+	/* width: 100%; */
+	margin-bottom: 15px;
+}
+
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+	display: inline;
+  	@extend .has-error;
+  	// border: 1px solid red;
+  	// margin: 2px;
+}
+
 .simple_form {
 	label {
 		/* float: left;

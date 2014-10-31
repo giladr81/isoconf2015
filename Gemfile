@@ -18,7 +18,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
-gem 'simple_form', '3.1.0rc1'
+gem 'simple_form'
+gem 'country_select'
 gem 'axlsx_rails'
 
 group :doc do

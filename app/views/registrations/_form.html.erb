@@ -1,15 +1,24 @@
 <%= simple_form_for @form do |f| %>
+	<%= render 'shared/error_messages' %>
 
 	<%= f.input :title, collection: [['Mr.','Mr.'], ['Ms.', 'Ms.'], ['Mrs.', 'Mrs.'], ['Miss.', 'Miss.'], ['Dr.', 'Dr.'], ['Prof.', 'Prof.']] %>
 	<%= f.input :firstName, label: "First Name" %>
 	<%= f.input :lastName, label: "Last Name" %>
+	<%= f.input :passport, label: "Passport number" %>
+	<%= f.input :country, label: "Country" %>
+	<%= f.input :citizenship, label: "Citizenship" %>	
 	<%= f.input :email, label: "E-mail", placeholder: 'user@domain.com' %>
 	<%= f.input :institutionalAffiliation, label: "Institutional Affiliation" %>
-	<%= f.input :accommodationType, label: "I would like to be accommodated in", collection:  [['Double Room', 'Double Room'], ['Single Room', 'Single Room'], ['No Accommodation', 'No Accommodation']], as: :radio_buttons %>
-	<%= f.input :doubleRoomShare, label: "Double room shared with" %>
-	<span style="font-weight: bold">I am planning to be accompanied by <%= f.input_field :accompaniedBy %> persons</span>
-
-	<p><span style="font-weight: bold">I would like to have:</span> <br />
+	<%= f.input :accommodationType, label: "I would like to be accommodated in", collection:  [['Single Room', 'Single Room'], ['Double Room', 'Double Room'], ['Twin Room', 'Twin Room'], ['No Accommodation',  'No Accommodation']], as: :radio_buttons %>
+	<span style="font-size: 0.9em;">
+		<%= f.input :doubleRoomShare, label: "Double room shared with" %>
+		<span style="font-weight: bold">I am planning to be accompanied by <%= f.input_field :accompaniedBy %> persons</span><br />
+		<span style="font-weight: bold; color: DimGray">Please provide the name of the accompying person you plan to share the room with:</span>
+		<%= f.input :spouse_name, label: "Spouse name" %>
+		<%= f.input :spouse_passport, label: "Spouse passport" %>
+		<%= f.input :spouse_country, label: "Country" %>
+	</span>
+	<p><span style="font-weight: bold; margin-top:25px !important;">I would like to have:</span> <br />
 	<%= f.check_box :presentationPoster, label: 'Poster' %> A poster presentation<br />
 	<%= f.check_box :presentationOral, label: 'Oral' %> An oral presentation<br />
 	</p>

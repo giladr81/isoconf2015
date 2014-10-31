@@ -21,3 +21,14 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    label:
+      registration:
+        firstName: "First name"
+  activerecord:
+    attributes:
+       registration:
+          firstName: "First name"
+          lastName: "Last Name"
+          institutionalAffiliation: "Institutional affiliation"
+          accommodationType: "Accommodation type"

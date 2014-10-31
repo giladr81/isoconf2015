@@ -18,4 +18,10 @@ class StaticPagesController < ApplicationController
     render layout: false
   end
   
+  def dates
+  end
+
+  def social
+  end
+  
 end

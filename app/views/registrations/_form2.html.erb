@@ -1,0 +1,63 @@
+<%= form_for @form, html: {class: 'reg_form'} do |f|  %>
+	<%= render 'shared/error_messages' %>
+	<%= f.label :title %>
+	<%= f.select :title, options_for_select([['Mr.','Mr.'], ['Ms.', 'Ms.'], ['Mrs.', 'Mrs.'], ['Miss.', 'Miss.'], ['Dr.', 'Dr.'], ['Prof.', 'Prof.']]) %>
+
+	<%= f.label :firstName %>
+	<%= f.text_field :firstName, class: 'details'%>
+
+	<%= f.label :lastName, "Last name" %>
+	<%= f.text_field :lastName, class: 'details' %>
+
+	<%= f.label :passport, "Passport number" %>
+	<%= f.text_field :passport,class: 'details' %>
+
+	<%= f.label :country, "Country" %>
+	<%= f.country_select :country, class: 'details' %>
+
+	<%= f.label :citizenship %>
+	<%= f.text_field :citizenship, class: 'details' %>
+
+	<%= f.label :email %>
+	<%= f.email_field :email, class: 'details' %>
+	
+	<%= f.label :institutionalAffiliation, "Institutional affiliation" %>
+	<%= f.text_field :institutionalAffiliation, class: 'details' %>
+
+
+	<%= f.label :accommodationType, "Accomodation type" %><br />
+	<%= f.radio_button :accommodationType, "Single Room" %>
+	<%= f.label :accommodationType_single_room, "Single Room", class: 'radios_checks_label' %><br />
+	<%= f.radio_button :accommodationType, "Twin Room" %>
+	<%= f.label :accommodationType_twin_room, "Twin Room", class: 'radios_checks_label' %><br />
+	<%= f.radio_button :accommodationType, "Double Room" %>
+	<%= f.label :accommodationType_double_room, "Double Room", class: 'radios_checks_label' %><br />
+	<%= f.radio_button :accommodationType, "No Accomodation" %>
+	<%= f.label :accommodationType_no_accomodation, "No Accomodation", class: 'radios_checks_label' %><br />
+
+	<div style="font-weight: bold; margin-top: 10px; margin-bottom: 5px;">I would like to have:</div>
+	<%= f.check_box :presentationPoster %> 
+	<%= f.label(:presentationPoster, "Poster presentation", class: 'radios_checks_label') %><br />
+	<%= f.check_box :presentationOral %> 
+	<%= f.label(:presentationOral, "Oral presentation", class: 'radios_checks_label') %><br />
+
+	<div>I would need extra nights before June 21st from:</div>
+	<%= f.date_field :extraNightsBefoe %>
+
+	<div>I would need extra nights after June 26th:</div>
+	<%= f.date_field :extraNightsAfter %>
+
+	<div style="font-weight: bold;">I would like to participate in the following activities / tours:</div>
+	<div style="margin-top: 10px; margin-bottom: 5px;">Jerusalem & Beth Lehem tour:</div>
+
+
+	<div style="margin-top: 10px; margin-bottom: 5px;">Dead Sea & Masada tour:</div>
+
+	<div style="margin-top: 10px; margin-bottom: 5px;">Nazareth & Sea of Galilee tour:</div>
+
+	<div style="margin-top: 10px; margin-bottom: 5px;">Caesarea, Acre & Rosh HaNikra tour:</div>
+
+	<%= f.label :specialRequests, "Special requests" %>
+	<%= f.text_area :specialRequests, size: "95x10" %><br />
+	<%= f.submit "Send my details!", class: "btn btn-large" %>
+<% end %>
