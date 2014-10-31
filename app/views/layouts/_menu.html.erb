@@ -6,11 +6,13 @@
 	<li class="<%= is_active?(organizers_path) %>"><%= link_to "Organizing Committee", organizers_path %></li>
 	
 	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Fees", new_registration_path %></li>
+	
 	<% if user_signed_in? %>
 		<li class="<%= is_active?(registrations_path) %>">
 				<%= link_to "Download Reg Form Data", registrations_path, class: "admin" %>
 		</li>
 	<% end %>
+	
 	<li class="<%= is_active?(payment_path) %>"><%= link_to "Payment", payment_path %></li>
 	<li class="<%= is_active?(social_path) %>"><%= link_to "Social program", social_path %></li>
 </ul>	
