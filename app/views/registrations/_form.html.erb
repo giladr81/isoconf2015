@@ -1,5 +1,4 @@
 <%= simple_form_for @form do |f| %>
-	<%= render 'shared/error_messages' %>
 
 	<%= f.input :title, collection: [['Mr.','Mr.'], ['Ms.', 'Ms.'], ['Mrs.', 'Mrs.'], ['Miss.', 'Miss.'], ['Dr.', 'Dr.'], ['Prof.', 'Prof.']] %>
 	<%= f.input :firstName, label: "First Name" %>

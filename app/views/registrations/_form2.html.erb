@@ -24,14 +24,28 @@
 	<%= f.label :institutionalAffiliation, "Institutional affiliation" %>
 	<%= f.text_field :institutionalAffiliation, class: 'details' %>
 
-
-	<%= f.label :accommodationType, "Accomodation type" %><br />
+	<%= f.label :accommodationType, "I would like to be accommodated in" %><br />
 	<%= f.radio_button :accommodationType, "Single Room" %>
 	<%= f.label :accommodationType_single_room, "Single Room", class: 'radios_checks_label' %><br />
+	
 	<%= f.radio_button :accommodationType, "Twin Room" %>
 	<%= f.label :accommodationType_twin_room, "Twin Room", class: 'radios_checks_label' %><br />
+	Please provide the name of participant sharing, if known, with <br />
+	<%= f.text_field :twin_share_with %> (Request only)<br/>
+	
 	<%= f.radio_button :accommodationType, "Double Room" %>
 	<%= f.label :accommodationType_double_room, "Double Room", class: 'radios_checks_label' %><br />
+	<%= f.label :doubleRoomShare, "I am planning to be accompanied by" %>
+	<%= f.number_field :accompaniedBy %>
+	persons	<br />
+	Please provide the name of accompanying you plan to share the room with:<br />
+	<%= f.label :spouse_name, "Name of spouse" %>
+	<%= f.text_field :spouse_name, class: 'details' %>
+	<%= f.label :spouse_passport, "Passport number" %>
+	<%= f.text_field :spouse_passport, class: 'details' %>
+	<%= f.label :spouse_country, "Country" %>
+	<%= f.text_field :spouse_country, class: 'details' %>
+
 	<%= f.radio_button :accommodationType, "No Accomodation" %>
 	<%= f.label :accommodationType_no_accomodation, "No Accomodation", class: 'radios_checks_label' %><br />
 
@@ -48,14 +62,15 @@
 	<%= f.date_field :extraNightsAfter %>
 
 	<div style="font-weight: bold;">I would like to participate in the following activities / tours:</div>
-	<div style="margin-top: 10px; margin-bottom: 5px;">Jerusalem & Beth Lehem tour:</div>
+	<div style="margin-top: 10px; margin-bottom: 5px;">1. Jerusalem & Beth Lehem tour:</div>
+	<%= radio_button_tag(:jerusalem_tour, "Monday, June 22, 2015") %>
+	<%= label_tag(:jerusalem_tour_monday, "Monday, June 22, 2015") %>
 
+	<div style="margin-top: 10px; margin-bottom: 5px;">2. Dead Sea & Masada tour:</div>
 
-	<div style="margin-top: 10px; margin-bottom: 5px;">Dead Sea & Masada tour:</div>
+	<div style="margin-top: 10px; margin-bottom: 5px;">3. Nazareth & Sea of Galilee tour:</div>
 
-	<div style="margin-top: 10px; margin-bottom: 5px;">Nazareth & Sea of Galilee tour:</div>
-
-	<div style="margin-top: 10px; margin-bottom: 5px;">Caesarea, Acre & Rosh HaNikra tour:</div>
+	<div style="margin-top: 10px; margin-bottom: 5px;">4. Caesarea, Acre & Rosh HaNikra tour:</div>
 
 	<%= f.label :specialRequests, "Special requests" %>
 	<%= f.text_area :specialRequests, size: "95x10" %><br />
