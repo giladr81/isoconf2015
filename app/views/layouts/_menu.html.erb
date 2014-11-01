@@ -5,7 +5,7 @@
 	<li class="<%= is_active?(dates_path) %>"><%= link_to "Important Dates", dates_path %></li>
 	<li class="<%= is_active?(organizers_path) %>"><%= link_to "Organizing Committee", organizers_path %></li>
 	
-	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Fees", new_registration_path %></li>
+	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Fees & Form", new_registration_path %></li>
 	<% if user_signed_in? %>
 		<li class="<%= is_active?(registrations_path) %>">
 				<%= link_to "Download Reg Form Data", registrations_path, class: "admin" %>

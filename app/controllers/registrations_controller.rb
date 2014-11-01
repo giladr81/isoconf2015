@@ -15,7 +15,7 @@ class RegistrationsController < ApplicationController
 	end
 
 	def show
-		@form = Registration.find(params[:id])
+		@results = Registration.find(params[:id])
 	end
 
 	def edit
