@@ -1,8 +1,9 @@
 <% provide(:title, 'Registration Fees') %>
 <h3>Registration Fees</h3>
-<p style="margin-top:15px;">Welcome to the Isotopes 2015 conference online registration site. Registration will be available shortly.
-Registration will be considered complete only upon payment (either online by credit card, or by bank 
-transfer to Aviation-Links Ltd.).</p>
+<p style="margin-top:15px;">Welcome to the Isotopes 2015 conference online registration site.
+	Please fill the registration form below. <br />
+<div style="font-size: 0.95em">Please note that registration will be considered complete only upon payment (either online by credit card, or by bank transfer to Aviation-Links Ltd.). Online payment will be available shortly, email will be used to verify a completed registration.</div>
+</p>
 <h4>Registration fees</h4>
 
 <p>
@@ -96,4 +97,6 @@ transfer to Aviation-Links Ltd.).</p>
   E-mail: ludwik@gsi.gov.il (letter from PhD or MSc supervisor is required) 
 </p>
 
-<!-- %= render partial: 'form2' % -->
+<% if user_signed_in? %>
+	<%= render partial: 'form2' %>
+<% end %>

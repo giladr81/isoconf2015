@@ -139,7 +139,7 @@ body {
 	.details {
 		@extend .form-control;
 		border: 3px solid #bbb;
-		width: 75%;
+		width: 85%;
 		margin-bottom: 15px;
 		height: auto !important;
 	}
@@ -148,12 +148,29 @@ body {
 		margin-top: 5px;
 		margin-left: 10px;
 	}
+
+	#share_number {
+			width: 50px !important;
+			margin-right: 0px;
+	}
+
+	#share_details {
+		font-size: 0.95em;
+		margin-left: 30px;
+		
+		label {
+			font-weight: normal;
+		}
+		input {
+			border: 1px solid #bbb;
+			width: 75%;
+		}
+	}
 }
 
 input, textarea, select {
 	border: 1px solid #bbb;
 	margin-right: 100%;
-	/* width: 100%; */
 	margin-bottom: 15px;
 }
 
