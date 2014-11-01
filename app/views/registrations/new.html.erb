@@ -97,4 +97,6 @@
   E-mail: ludwik@gsi.gov.il (letter from PhD or MSc supervisor is required) 
 </p>
 
-<%= render partial: 'form2' %>
+<% if user_signed_in? %>
+	<%= render partial: 'form2' %>
+<% end %>
