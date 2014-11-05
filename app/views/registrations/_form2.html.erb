@@ -1,15 +1,15 @@
 <%= form_for @form, html: {class: 'reg_form'} do |f|  %>
 	<%= render 'shared/error_messages' %>
-	<%= f.label :title %>
+	<%= f.label :title %><span style="font-weight:bold"><font color="red"> *</font></span>
 	<%= f.select :title, options_for_select([['Mr.','Mr.'], ['Ms.', 'Ms.'], ['Mrs.', 'Mrs.'], ['Miss.', 'Miss.'], ['Dr.', 'Dr.'], ['Prof.', 'Prof.']]) %>
 
-	<%= f.label :firstName %>
-	<%= f.text_field :firstName, class: 'details'%>
-
-	<%= f.label :lastName, "Last name" %>
+	<%= f.label :lastName, "Last name" %><span style="font-weight:bold"><font color="red"> *</font></span>
 	<%= f.text_field :lastName, class: 'details' %>
 
-	<%= f.label :passport, "Passport number" %>
+	<%= f.label :firstName %><span style="font-weight:bold"><font color="red"> *</font></span>
+	<%= f.text_field :firstName, class: 'details'%>
+
+	<%= f.label :passport, "Passport number" %><span style="font-weight:bold"><font color="red"> *</font></span>
 	<%= f.text_field :passport, class: 'details' %>
 
 	<%= f.label :country, "Country" %>
@@ -18,10 +18,10 @@
 	<%= f.label :citizenship %>
 	<%= f.text_field :citizenship, class: 'details' %>
 
-	<%= f.label :email %>
+	<%= f.label :email %><span style="font-weight:bold"><font color="red"> *</font></span>
 	<%= f.email_field :email, class: 'details' %>
 	
-	<%= f.label :institutionalAffiliation, "Institutional affiliation" %>
+	<%= f.label :institutionalAffiliation, "Institutional affiliation" %><span style="font-weight:bold"><font color="red"> *</font></span>
 	<%= f.text_field :institutionalAffiliation, class: 'details' %>
 
 	<%= f.label :accommodationType, "I would like to be accommodated in" %><br />
@@ -38,9 +38,9 @@
 	<%= f.radio_button :accommodationType, "Double Room" %>
 	<%= f.label :accommodationType_double_room, "Double Room", class: 'radios_checks_label' %><br />
 	<div id="share_details">
-		<%= f.label :doubleRoomShare, "I am planning to be accompanied by" %>
-		<%= f.number_field :accompaniedBy, id: "share_number" %>
-		persons	<br />
+		<!-- %= f.label :doubleRoomShare, "I am planning to be accompanied by" % -->
+		<!-- %= f.number_field :accompaniedBy, id: "share_number" % -->
+		I am planning to be accompanied by person. 
 		Please provide the name of accompanying you plan to share the room with:<br />
 		<%= f.label :spouse_name, "Name of spouse" %>
 		<%= f.text_field :spouse_name, class: 'details' %>
@@ -49,11 +49,32 @@
 		<%= f.label :spouse_country, "Country" %>
 		<%= f.country_select :spouse_country, class: 'details', prompt: "Select country" %>
 	</div>
+	<div>
+	<span style="font-weight:bold;">I would like to be in Park Prima Hotel:</span><br/>
+		<div style="padding-left:30px;">
+			<%= f.radio_button :accommodationType, "Prima Single Room" %>
+			<%= f.label :accommodationType_prima_single_room, "Single Room", class: 'radios_checks_label' %><br />
+			<%= f.radio_button :accommodationType, "Prima Double Room" %>
+			<%= f.label :accommodationType_prima_double_room, "Double Room", class: 'radios_checks_label' %><br />
+			<div id="share_details">
+				<!-- %= f.label :doubleRoomShare, "I am planning to be accompanied by" % -->
+				<!-- %= f.number_field :accompaniedBy, id: "share_number" % -->
+				I am planning to be accompanied by person. 
+				Please provide the name of accompanying you plan to share the room with:<br />
+				<%= f.label :PrimaSpouse, "Name of spouse" %>
+				<%= f.text_field :PrimaSpouse, class: 'details' %>
+				<%= f.label :PrimaSpousePassport, "Passport number" %>
+				<%= f.text_field :PrimaSpousePassport, class: 'details' %>
+				<%= f.label :PrimaSpouseCountry, "Country" %>
+				<%= f.country_select :PrimaSpouseCountry, class: 'details', prompt: "Select country" %>
+			</div>
+		</div>
+	</div>
 
-	<%= f.radio_button :accommodationType, "No Accomodation" %>
-	<%= f.label :accommodationType_no_accomodation, "No Accomodation", class: 'radios_checks_label' %><br />
+	<%= f.radio_button :accommodationType, "No Accommodation" %>
+	<%= f.label :accommodationType_no_accomodation, "No Accommodation", class: 'radios_checks_label' %><br />
 
-	<div style="font-weight: bold; margin-top: 10px; margin-bottom: 5px;">I would like to have:</div>
+	<div style="font-weight: bold; margin-top: 20px; margin-bottom: 5px;">I would like to have:</div>
 	<%= f.check_box :presentationPoster %> 
 	<%= f.label(:presentationPoster, "Poster presentation", class: 'radios_checks_label') %><br />
 	<%= f.check_box :presentationOral %> 
@@ -65,8 +86,8 @@
 	<div>I would need extra nights after June 26th:</div>
 	<%= f.date_field :extraNightsAfter %>
 
-	<div style="font-weight: bold;">I would like to participate in the following activities / tours:</div>
-	<div style="margin-top: 10px; margin-bottom: 5px;">1. Jerusalem & Beth Lehem tour:</div>
+	<div style="font-weight: bold; padding-top:20px;">I would like to participate in the following activities / tours:</div>
+	<div style="margin-top: 10px; margin-bottom: 5px;">1. Jerusalem & Bethlehem tour:</div>
 	
 	<%= f.radio_button :jerusalem_tour, "Monday, June 22, 2015" %>
 	<%= f.label :jerusalem_tour_Monday__June_22__2015, "Monday, June 22, 2015", class: 'radios_checks_label' %><br />
@@ -79,9 +100,6 @@
 
 	<div style="margin-top: 10px; margin-bottom: 5px;">2. Dead Sea & Masada tour:</div>
 
-	<%= f.radio_button :deadsea_tour, "Tuesday, June 23, 2015" %>
-	<%= f.label :deadsea_tour_Tuesday__June_23__2015, "Tuesday, June 23, 2015", class: 'radios_checks_label' %><br />
-
 	<%= f.radio_button :deadsea_tour, "Friday, June 26, 2015" %>
 	<%= f.label :deadsea_tour_Friday__June_26__2015, "Friday, June 26, 2015", class: 'radios_checks_label' %><br />
 
@@ -92,9 +110,6 @@
 	<%= f.number_field :deadsea_participants, id: "share_number" %>
 
 	<div style="margin-top: 10px; margin-bottom: 5px;">3. Nazareth & Sea of Galilee tour:</div>
-
-	<%= f.radio_button :nazareth_tour, "Wednesday, June 24, 2015" %>
-	<%= f.label :nazareth_tour_Wednesday__June_24__2015, "Wednesday, June 24, 2015", class: 'radios_checks_label' %><br />
 
 	<%= f.radio_button :nazareth_tour, "Friday, June 26, 2015" %>
 	<%= f.label :nazareth_tour_Friday__June_26__2015, "Friday, June 26, 2015", class: 'radios_checks_label' %><br />
@@ -107,9 +122,6 @@
 
 
 	<div style="margin-top: 10px; margin-bottom: 5px;">4. Caesarea, Acre & Rosh HaNikra tour:</div>
-
-	<%= f.radio_button :caesarea, "Thursday, June 25, 2015" %>
-	<%= f.label :caesarea_Thursday__June_25__2015, "Thursday, June 25, 2015", class: 'radios_checks_label' %><br />
 
 	<%= f.radio_button :caesarea, "Friday, June 26, 2015" %>
 	<%= f.label :caesarea_Friday__June_26__2015, "Friday, June 26, 2015", class: 'radios_checks_label' %><br />
@@ -126,11 +138,11 @@
 	<%= f.submit "Submit my registration!", class: "btn btn-large" %>
 
 
-	<div style="font-weight:bold; padding-top: 10px; font-size: 1.2em">
-		For more information or help, you can contact by email to Aviation-Links representatives:<br />
+	<div style="font-weight:bold; padding-top: 10px; font-size: 1.1em">
+		For more information or help, we will be glad to assist you by email:<br />
 	</div>
 	<div style="margin-left: 10px; margin-top: 5px; font-size: 1.05em; line-height: 150%">
-		Mrs. Galit Albocher: galital@aviation-links.co.il<br />
-		Mrs. Nurit Nevet: nurit.nevet@aviation-links.co.il
+		Mrs. Galit Albocher: <a href="mailto:galital@aviation-links.co.il">galital@aviation-links.co.il</a><br />
+		Mrs. Nurit Nevet: <a href="mailto:nurit.nevet@aviation-links.co.il">nurit.nevet@aviation-links.co.il</a><br />
 	</div>
 <% end %>

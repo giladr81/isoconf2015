@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031112851) do
+ActiveRecord::Schema.define(version: 20141105200150) do
 
   create_table "registrations", force: true do |t|
     t.string   "title"
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(version: 20141031112851) do
     t.integer  "deadsea_participants"
     t.integer  "nazareth_participants"
     t.integer  "caesarea_participants"
+    t.string   "PrimaType"
+    t.string   "PrimaSpouse"
+    t.string   "PrimaSpousePassport"
+    t.string   "PrimaSpouseCountry"
   end
 
   add_index "registrations", ["email"], name: "index_registrations_on_email", unique: true

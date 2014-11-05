@@ -7,7 +7,7 @@ class Registration < ActiveRecord::Base
 	validates :email, presence: true,
 					  format: 	  { with: VALID_EMAIL_REGEX }, 
 					  uniqueness: { case_sensitive: false }
-
+	validates :passport, presence: true
 	validates :institutionalAffiliation, presence: true
 	validates :accommodationType, presence: true
 

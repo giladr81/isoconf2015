@@ -23,5 +23,9 @@ class StaticPagesController < ApplicationController
 
   def social
   end
+
+  def sponsors
+  end
+
   
 end
