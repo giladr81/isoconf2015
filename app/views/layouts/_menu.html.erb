@@ -4,17 +4,16 @@
 	<li class="<%= is_active?(program_path) %>"><%= link_to "Program", program_path %></li>
 	<li class="<%= is_active?(dates_path) %>"><%= link_to "Important Dates", dates_path %></li>
 	<li class="<%= is_active?(organizers_path) %>"><%= link_to "Organizing Committee", organizers_path %></li>
+	<li class="<%= is_active?(social_path) %>"><%= link_to "Social program", social_path %></li>
 
+	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Form", new_registration_path %></li>
 	<% if user_signed_in? %>
-		<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Form", new_registration_path %></li>
 		<li class="<%= is_active?(registrations_path) %>">
 				<%= link_to "Download Reg Form Data", registrations_path, class: "admin" %>
 		</li>
-	<% else %>
-		<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Fees", new_registration_path %></li>
-	<% end %>
-	
+	<% end %>	
 	<li class="<%= is_active?(payment_path) %>"><%= link_to "Payment", payment_path %></li>
-	<li class="<%= is_active?(social_path) %>"><%= link_to "Social program", social_path %></li>
-	<li class="<%= is_active?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
+	<% if user_signed_in? %>
+		<li class="<%= is_active?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
+	<% end %>
 </ul>	
