@@ -31,8 +31,9 @@
 	<%= f.radio_button :accommodationType, "Twin Room" %>
 	<%= f.label :accommodationType_twin_room, "Twin Room", class: 'radios_checks_label' %><br />
 	<div id="share_details">
-		Please provide the name of participant sharing, if known, with <br />
-		<%= f.text_field :twin_share_with %> (Request only)<br/>
+		Please provide the name of participant sharing with (request only)<br />
+		<%= f.text_field :twin_share_with %><br/>
+		Sharing room assigning will be at the discretion of the organize company
 	</div>
 
 	<%= f.radio_button :accommodationType, "Double Room" %>
@@ -80,11 +81,13 @@
 	<%= f.check_box :presentationOral %> 
 	<%= f.label(:presentationOral, "Oral presentation", class: 'radios_checks_label') %><br />
 
-	<div>I would need extra nights before June 21st from:</div>
-	<%= f.date_field :extraNightsBefoe %>
+	<div style="padding-top:20px;">
+		<span style="font-weight:bold;">I would need extra nights before June 21st, from:</span>
+		<%= f.date_field :extraNightsBefoe %>
 
-	<div>I would need extra nights after June 26th:</div>
-	<%= f.date_field :extraNightsAfter %>
+		<span style="font-weight:bold;">I would need extra nights after June 26th, until:</span>
+		<%= f.date_field :extraNightsAfter %>
+	</div>
 
 	<div style="font-weight: bold; padding-top:20px;">I would like to participate in the following activities / tours:</div>
 	<div style="margin-top: 10px; margin-bottom: 5px;">1. Jerusalem & Bethlehem tour:</div>
