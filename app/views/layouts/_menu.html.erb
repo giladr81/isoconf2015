@@ -13,7 +13,6 @@
 		</li>
 	<% end %>	
 	<li class="<%= is_active?(payment_path) %>"><%= link_to "Payment", payment_path %></li>
-	<% if user_signed_in? %>
-		<li class="<%= is_active?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
-	<% end %>
+	<li class="<%= is_active?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
+
 </ul>	
