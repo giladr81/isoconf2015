@@ -27,5 +27,7 @@ class StaticPagesController < ApplicationController
   def sponsors
   end
 
+  def fees
+  end
   
 end

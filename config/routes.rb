@@ -15,6 +15,7 @@ IsoconfApp::Application.routes.draw do
   match '/venue', to: 'static_pages#venue', via: 'get'
   match '/organizers', to: 'static_pages#organizers', via: 'get'
   match '/dates', to: 'static_pages#dates', via: 'get'
+  match '/fees', to: 'static_pages#fees', via: 'get'
   match '/payment', to: 'static_pages#payment', via: 'get'
   match '/social', to: 'static_pages#social', via: 'get'
   match '/sponsors', to: 'static_pages#sponsors', via: 'get'

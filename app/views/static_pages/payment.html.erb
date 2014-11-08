@@ -1,7 +1,14 @@
 <% provide(:title, 'Payment') %>
 <h3>Payment</h3>
 
-<p>The registration is not complete until full payment has been provided.</p>
+<p style="font-weight:bold">The registration is not complete until full payment has been provided.
+
+<%= form_tag("/registrations/", method: "get") do %>
+  <%= label_tag :email, "Please fill in the email you provided in the registration form:" %>
+  <%= number_field :email, class: 'details' %>
+  <%= submit_tag("Search") %>
+<% end %>
+</p>
 
 <p>Title of payment: Isotopes 2015 conference<br />
 	Account Name: Aviation Links LTD<br />
