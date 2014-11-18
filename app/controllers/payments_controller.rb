@@ -12,4 +12,7 @@ class PaymentsController < ApplicationController
 		@name = participant.accommodationType
 		render 'show'
 	end
+
+	def xml_res
+	end
 end
