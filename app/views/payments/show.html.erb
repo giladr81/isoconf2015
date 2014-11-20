@@ -1,0 +1,18 @@
+<h3>
+	Payment details for <%= @result.title %> <%= @result.lastName %> <%= @result.firstName %>
+</h3>
+<h4><%= @result.email %></h4>
+<span style="font-weight:bold;">Room type:</span> <%= @roomType %>,
+<span style="font-weight:bold;">Price:</span> <%= @roomPrice %> € (Euro)<br />
+<span style="font-weight:bold;">Conference Price:</span> <%= @confPrice %><br />
+<span style="font-weight:bold;">Total Price:</span> <%= @totalPrice %> € (Euro)<br />
+<%= @tours %><br />
+<span style="font-weight:bold;">Tours:</span> <%= @toursPrice %>
+<br />
+
+<p style="margin-top:15px;">
+<%= link_to "Click here to pay and complete conference registration", "@pay_link", :target => "_blank"%> <br />
+<span style="font-weight:bold; font-size: 0.9em;">
+	(Note that you will be redirected to a secured and encrypted website to fill in your credit card details)
+</span>
+</p>

@@ -1,5 +1,11 @@
 IsoconfApp::Application.routes.draw do
   resources :registrations
+  resources :payments do
+      collection do
+        get 'xml_res'
+      end
+  end
+
   # resources :temp
   devise_for :users
 
@@ -16,10 +22,10 @@ IsoconfApp::Application.routes.draw do
   match '/organizers', to: 'static_pages#organizers', via: 'get'
   match '/dates', to: 'static_pages#dates', via: 'get'
   match '/fees', to: 'static_pages#fees', via: 'get'
-  match '/payment', to: 'static_pages#payment', via: 'get'
+  match '/pay', to: 'static_pages#payment', via: 'get'
   match '/social', to: 'static_pages#social', via: 'get'
   match '/sponsors', to: 'static_pages#sponsors', via: 'get'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
