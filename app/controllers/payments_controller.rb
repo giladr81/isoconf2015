@@ -3,6 +3,7 @@ class PaymentsController < ApplicationController
 	before_filter :set_prices
 	@result = ''
 	@show_params = ''
+	
 	def index
 	end
 
@@ -61,7 +62,7 @@ class PaymentsController < ApplicationController
 							xml.action_Type('5') # check
 							xml.card_Reader('2') # check
 							xml.client_Name('test')
-							xml.host('http://www.google.co.il/')
+							xml.host('http://isotopes2015.conferences-travel-nevet.com/payments/xml_res/')
 							xml.company_Key('8fgU0hk2sG+AyzVb06TtTg==')
 							xml.stars('0')
 							xml.reader_Data('2') #check
@@ -103,7 +104,36 @@ class PaymentsController < ApplicationController
 
 
 	def xml_res
-		@show_params = params[:params]
+		token = params[:params]
+		req = Nokogiri::XML::Builder.new do |xml|
+		  xml.send("soap12:Envelope",
+		  	'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
+		  	'xmlns:xsd' => "http://www.w3.org/2001/XMLSchema",
+		  	'xmlns:soap12' => "http://www.w3.org/2003/05/soap-envelope") {
+			xml.send("soap12:Body") {
+					xml.getTokenAndApprove('xmlns' => "http://tempuri.org/") {
+						xml.uid(token) # fill in
+						xml.approveNum()
+						xml.returnCode()
+						xml.customerId() # check
+						xml.validDate() # check
+						xml.cardType()
+						}
+					}
+				}
+		end
+
+		client = Savon.client(
+			endpoint: "https://www.credit2000.co.il/web_2202/wcf/wscredit2000.asmx?op=getTokenAndApprove",
+			namespace: "http://tempuri.org/",
+			pretty_print_xml: true)
+		req_xml = req.to_xml
+
+		response = client.call(:get_token_and_approve, soap_action: "http://tempuri.org/getTokenAndApprove", xml: req_xml)
+		res = response.doc.remove_namespaces!
+
+
+		@credit_res = res
 	end
 
 	private
