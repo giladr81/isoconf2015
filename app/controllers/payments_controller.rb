@@ -133,7 +133,9 @@ class PaymentsController < ApplicationController
 		approveNum = res.xpath('//getTokenAndApproveResponse/approveNum').text
 		returnCode = res.xpath('//getTokenAndApproveResponse/returnCode').text
 
-		if returnCode != '000'
+		@pay_res = res
+
+		if returnCode != '133'
 			redirect_to pay_url,:flash => {error: "Error! Couldn't complete payment, please try again later"} and return
 		else
 			redirect_to root_url,:flash => {success: "Registration complete! You should receive a confirmation email shortly."} and return
