@@ -2,6 +2,8 @@ class PaymentsController < ApplicationController
 
 	before_filter :set_prices
 	@req_xml = 'default'
+	@approveNum = ''
+	@returnCode = ''
 	# @show_params = ''
 	
 	def index
