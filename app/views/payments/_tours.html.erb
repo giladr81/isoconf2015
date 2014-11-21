@@ -1,0 +1,8 @@
+<span style="font-weight:bold;">Tours:</span>
+<ul>
+<% @tours.each do |tour, value| %>
+		<% if value[:going] == true %>
+			<li><%= value[:name] %>, Number of participants: <%= value[:participants] %></li>
+		<% end %>
+<% end %>
+</ul>

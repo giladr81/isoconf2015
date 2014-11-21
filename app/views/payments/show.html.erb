@@ -5,14 +5,14 @@
 <span style="font-weight:bold;">Room type:</span> <%= @roomType %>,
 <span style="font-weight:bold;">Price:</span> <%= @roomPrice %> € (Euro)<br />
 <span style="font-weight:bold;">Conference Price:</span> <%= @confPrice %><br />
-<span style="font-weight:bold;">Total Price:</span> <%= @totalPrice %> € (Euro)<br />
-<%= @tours %><br />
-<span style="font-weight:bold;">Tours:</span> <%= @toursPrice %>
-<br />
 
-<p style="margin-top:15px;">
+<span style="font-weight:bold;">Total Price:</span> <%= @totalPrice %> € (Euro)<br />
+
+<%= link_to "Click here to edit your registration form", edit_registration_url(@result) %> <br />
+
+<p style="margin-top:15px; font-weight:bold;">
 <%= link_to "Click here to pay and complete conference registration", @pay_link %> <br />
-<span style="font-weight:bold; font-size: 0.9em;">
+<span style="font-size: 0.85em;">
 	(Note that you will be redirected to a secured and encrypted website to fill in your credit card details)
 </span>
 </p>

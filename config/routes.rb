@@ -2,7 +2,7 @@ IsoconfApp::Application.routes.draw do
   resources :registrations
   resources :payments do
       collection do
-        get 'xml_res'
+        get 'confpay'
       end
   end
 
