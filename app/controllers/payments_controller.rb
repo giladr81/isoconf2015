@@ -14,6 +14,7 @@ class PaymentsController < ApplicationController
 
 		participant = Registration.find_by(email: params[:email])
 		@result = participant
+		
 		@roomType = participant.accommodationType
 		case @roomType
 		when 'Twin Room'
