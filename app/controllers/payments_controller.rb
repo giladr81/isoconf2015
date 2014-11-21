@@ -130,16 +130,16 @@ class PaymentsController < ApplicationController
 		response = client.call(:get_token_and_approve, soap_action: "http://tempuri.org/getTokenAndApprove", xml: req_xml)
 		res = response.doc.remove_namespaces!
 
-		approveNum = res.xpath('//getTokenAndApproveResponse/approveNum').text
-		returnCode = res.xpath('//getTokenAndApproveResponse/returnCode').text
+		@approveNum = res.xpath('//getTokenAndApproveResponse/approveNum').text
+		@returnCode = res.xpath('//getTokenAndApproveResponse/returnCode').text
 
 		@pay_res = res
 
-		if returnCode != '133'
-			redirect_to pay_url,:flash => {error: "Error! Couldn't complete payment, please try again later"} and return
-		else
-			redirect_to root_url,:flash => {success: "Registration complete! You should receive a confirmation email shortly."} and return
-		end
+		# if returnCode != '133'
+		# 	redirect_to pay_url,:flash => {error: "Error! Couldn't complete payment, please try again later"} and return
+		# else
+		# 	redirect_to root_url,:flash => {success: "Registration complete! You should receive a confirmation email shortly."} and return
+		# end
 	end
 
 	private
