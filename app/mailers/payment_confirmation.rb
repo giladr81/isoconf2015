@@ -3,7 +3,7 @@ class PaymentConfirmation < ActionMailer::Base
 
   def confirmation_email(participant)
   	@participant = participant
-  	mail(to: participant.email, subject: 'Isotopes 2015 registration confirmation')
+  	mail(to: @participant.email, subject: 'Isotopes 2015 registration confirmation')
   end
 
 end
