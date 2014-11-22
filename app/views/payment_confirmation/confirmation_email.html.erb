@@ -10,7 +10,14 @@
       This is to confirm you have successfully signed up to Isotopes 2015 conference!<br />
       Here is a summary of your registration:<br />
       <ul>
-        <li>TODO: insert list here</li>
+        <li>Room type and fee:
+        <% if @roomPrice > 0 %>
+          <%= @roomType %>, <%= @roomPrice %> € (Euro)
+        <% else %>
+          Not Applicable
+        <% end %>
+        </li>
+        <li>Conference participation fee: <%= @confPrice %></li>
       </ul>
     </p>
     <p>We look forward to seeing you!</p>
