@@ -4,15 +4,22 @@
 <h4><%= @result.email %></h4>
 <span style="font-weight:bold;">Room type:</span> <%= @roomType %>,
 <span style="font-weight:bold;">Price:</span> <%= @roomPrice %> € (Euro)<br />
-<span style="font-weight:bold;">Conference Price:</span> <%= @confPrice %><br />
+<span style="font-weight:bold;">Conference Price: </span><%= @confPrice %>
+<% if not @confPrice.instance_of? String %>
+	€ (Euro)
+<% end %>
+<br />
 
 <span style="font-weight:bold;">Total Price:</span> <%= @totalPrice %> € (Euro)<br />
 
-<%= link_to "Click here to edit your registration form", edit_registration_url(@result) %> <br />
+<div style="margin-top:10px; font-weight: bold; color:#336699;">
+	Please contact us if you believe the details above are incorrect
+	(with '<%= @result.id %>' as reference number).
+</div>
 
-<p style="margin-top:15px; font-weight:bold;">
+<div style="margin-top:15px; font-weight:bold; font-color: #336699; font-size: 1.1em">
 <%= link_to "Click here to pay and complete conference registration", @pay_link %> <br />
 <span style="font-size: 0.85em;">
 	(Note that you will be redirected to a secured and encrypted website to fill in your credit card details)
 </span>
-</p>
+</div>

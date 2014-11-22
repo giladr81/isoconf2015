@@ -4,14 +4,13 @@ class PaymentsController < ApplicationController
 	@req_xml = 'default'
 	@approveNum = ''
 	@returnCode = ''
-	# @show_params = ''
 	
 	def index
 		redirect_to pay_url
 	end
 
 	def show
-
+		redirect_to pay_url
 	end
 
 	def create
@@ -164,19 +163,19 @@ class PaymentsController < ApplicationController
 		@tours
 	end
 
-	def calcToursPrice(tours)
-		if tours[:jerusalem]
-		 	@toursPrice = @toursPrice + @tours[:jerusalem][:participants].to_i*100
-		end
-		if tours[:deadsea]
-		 	@toursPrice = @toursPrice + @tours[:deadsea][:participants].to_i*100
-		end
-		if tours[:nazareth]
-		 	@toursPrice = @toursPrice + @tours[:nazareth][:participants].to_i*100
-		end
-		if tours[:caesarea]
-		 	@toursPrice = @toursPrice + @tours[:caesarea][:participants].to_i*100
-		end
-	end
+	# def calcToursPrice(tours)
+	# 	if tours[:jerusalem]
+	# 	 	@toursPrice = @toursPrice + @tours[:jerusalem][:participants].to_i*100
+	# 	end
+	# 	if tours[:deadsea]
+	# 	 	@toursPrice = @toursPrice + @tours[:deadsea][:participants].to_i*100
+	# 	end
+	# 	if tours[:nazareth]
+	# 	 	@toursPrice = @toursPrice + @tours[:nazareth][:participants].to_i*100
+	# 	end
+	# 	if tours[:caesarea]
+	# 	 	@toursPrice = @toursPrice + @tours[:caesarea][:participants].to_i*100
+	# 	end
+	# end
 
 end
