@@ -18,7 +18,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
-gem 'simple_form'
+# gem 'simple_form'
 gem 'country_select'
 gem 'axlsx_rails'
 gem 'savon', '~> 2.0'
