@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'axlsx_rails'
 gem 'savon', '~> 2.0'
+gem 'postmark-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
