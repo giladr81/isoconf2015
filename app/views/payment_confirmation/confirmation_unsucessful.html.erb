@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Isotopes 2015 Conference - Payment Failure</h3>
+    <p>
+      Hi Nurit,<br />
+      Please note that <%= @payed_user.title %> <%= @payed_user.lastName %> <%= @payed_user.firstName %>
+       couldn't complete payment.<br />
+      You can contact him by email <% mail_to @payed_user.email %> %>.
+    </p>
+    <p>We look forward to seeing you!</p>
+  </body>
+</html>
