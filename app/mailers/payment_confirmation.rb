@@ -29,7 +29,7 @@ class PaymentConfirmation < ActionMailer::Base
 
   def confirmation_unsucessful(participant)
   	@payed_user = participant
-  	mail(to: "giladrainer@gmail.com",
+  	mail(to: "Nurit.Nevet@aviation-links.co.il",
   		 from: "isotopes2015@conferences-travel-nevet.com",
   		 subject: 'Isotopes 2015 - Payment failure',
   		 tag: "payment-failure")
