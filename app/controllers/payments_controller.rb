@@ -17,6 +17,9 @@ class PaymentsController < ApplicationController
 	def create
 		participant = Registration.find_by(email: params[:email])
 		redirect_to pay_url,:flash => {error: 'Error! Unable to find email. Please fill in registration form first'} and return if participant.nil?		
+		if participant.payed?
+			redirect_to pay_url,:flash => {error: 'Error! Our records show you already payed'} and return
+		end
 
 		@result = participant		
 		@roomType = participant.accommodationType
@@ -142,6 +145,9 @@ class PaymentsController < ApplicationController
 		if returnCode != '000'
 			redirect_to pay_url,:flash => {error: "Error! Couldn't complete payment, please try again later"} and return
 		else
+			@participant.payed = true
+			@participant.credit2000Approve = approveNum
+			@participant.save
 			PaymentConfirmation.confirmation_email(@participant).deliver
 			redirect_to root_url,:flash => {success: "Registration complete! You should receive a confirmation email shortly."} and return
 		end
