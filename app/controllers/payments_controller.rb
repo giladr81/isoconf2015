@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
 	@req_xml = 'default'
 	@approveNum = ''
 	@returnCode = ''
-	
+
 	def index
 		redirect_to pay_url
 	end
@@ -21,11 +21,15 @@ class PaymentsController < ApplicationController
 		if not participant.extraNightsBefoe.nil?
 			nightsBefore = (Date.new(2015, 6, 21) - participant.extraNightsBefoe).to_i
 			@moreNightsBefore = nightsBefore
+		else
+			nightsBefore = 0
 		end
 
 		if not participant.extraNightsAfter.nil?
 			nightsAfter = (participant.extraNightsAfter - (Date.new(2015, 6, 26))).to_i
 			@moreNightsAfter = nightsAfter
+		else
+			nightsAfter = 0
 		end
 
 		@result = participant		
@@ -54,6 +58,9 @@ class PaymentsController < ApplicationController
 			@roomPrice = 280*2
 			@moreNightsBeforeTotal = nightsBefore * 100
 			@moreNightsAfterTotal = nightsAfter * 100
+		when 'No Accommodation'
+			@moreNightsBeforeTotal = 0
+			@moreNightsAfterTotal = 0
 		end
 
 		
@@ -85,6 +92,7 @@ class PaymentsController < ApplicationController
 							xml.card_Reader('2')
 							xml.client_Name(participant.title + ' ' + participant.lastName + ' ' + participant.firstName)
 							xml.host('http://isotopes2015.conferences-travel-nevet.com/payments/confpay/')
+							# xml.host('http://requestb.in/1mtejc11')
 							xml.company_Key('8fgU0hk2sG+AyzVb06TtTg==')
 							xml.stars('0')
 							xml.reader_Data('2')
@@ -162,6 +170,7 @@ class PaymentsController < ApplicationController
 
 		if returnCode != '000'
 			PaymentConfirmation.confirmation_unsucessful(@participant).deliver
+			@errorCode = returnCode
 			redirect_to pay_url,:flash => {error: "Error! Couldn't complete payment, please try again later"} and return
 		else
 			@participant.payed = true
@@ -180,8 +189,15 @@ class PaymentsController < ApplicationController
 		@roomPrice = 0
 		@toursPrice = 0
 		@totalPrice = 0
+
+		# Extra Nights
+		# Quantity
 		@moreNightsBefore = 0
 		@moreNightsAfter = 0
+		# Total - Quantity * Price
+		@moreNightsBeforeTotal = 0
+		@moreNightsAfterTotal = 0
+
 		@tours
 	end
 

@@ -9,6 +9,7 @@
       Hi Nurit,<br />
       Please note that <%= @payed_user.title %> <%= @payed_user.lastName %> <%= @payed_user.firstName %>
        couldn't complete payment.<br />
+      Error code from credit 2000 is: <%= @errorCode %> <br />
       You can contact him by email <%= mail_to @payed_user.email %>, and
       view and edit his registration form is <%= link_to "here", edit_registration_url(@payed_user) %>.
     </p>
