@@ -17,7 +17,11 @@
           Not Applicable
         <% end %>
         </li>
-        <li>Conference participation fee: <%= @confPrice %></li>
+        <li>Conference participation fee: <%= @confPrice %>
+          <% if not @confPrice.instance_of? String %>
+            € (Euro)
+          <% end %>
+        </li>
       </ul>
     </p>
     <p>We look forward to seeing you!</p>
