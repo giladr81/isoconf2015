@@ -5,6 +5,7 @@ class PaymentConfirmation < ActionMailer::Base
   	@roomType = participant.accommodationType
   	@roomPrice = 0
   	@confPrice = 660
+  	
 	case @roomType
 	when 'Twin Room'
 		@roomPrice = 1065
