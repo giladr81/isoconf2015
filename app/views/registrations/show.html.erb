@@ -1,3 +1,4 @@
+<% provide(:title, 'Show participant details') %>
 <% if current_user %>
 	<h3>Showing details for record no' <%= @results.id %></h3>
 
@@ -5,7 +6,7 @@
 		First Name: <%= @results.firstName %><br />
 		Last Name: <%= @results.lastName %><br />
 	</p>
-	<%= link_to 'Edit participant details', edit_registration_path %> | 
+	<%= link_to 'Edit participant details', edit_registration_path(@results) %> | 
 	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 <% else %>
 	<h3>Access Denied</h3>

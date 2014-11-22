@@ -1,3 +1,28 @@
 <% provide(:title, 'Edit Participant Data') %>
 <h3>Editing data for <%= @form.title %> <%= @form.lastName %> <%= @form.firstName %></h3>
+<% if @form.payed == true %>
+	<div style="margin-top: 20px;
+    background-color: #f2dede;
+    border-color: red; 
+    color: #b94a48;
+    text-align: center;
+    font-size: 1.2em;
+    border-style: solid; 
+    border-width: 2px;">
+    	ATTENTION! User already payed!
+	</div>
+<% end %>
 <%= render partial: 'form2' %>
+<% if @form.payed == true %>
+	<div style="margin-top: 20px;
+	margin-bottom: 15px;
+    background-color: #f2dede;
+    border-color: red; 
+    color: #b94a48;
+    text-align: center;
+    font-size: 1.2em;
+    border-style: solid; 
+    border-width: 2px;">
+    	ATTENTION! User already payed!
+	</div>
+<% end %>
