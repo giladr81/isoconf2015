@@ -10,7 +10,7 @@
       Please note that <%= @payed_user.title %> <%= @payed_user.lastName %> <%= @payed_user.firstName %>
        couldn't complete payment.<br />
       You can contact him by email <%= mail_to @payed_user.email %>. <br />
-      His registaion form is <% link_to "here", edit_registration_path(@payed_user) %>,
+      His registration form is <% link_to "here", edit_user_registration(@payed_user) %>,
 
     </p>
   </body>
