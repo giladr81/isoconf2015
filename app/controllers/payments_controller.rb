@@ -135,7 +135,7 @@ class PaymentsController < ApplicationController
 		res = response.doc.remove_namespaces!
 
 		approveNum = res.xpath('//getTokenAndApproveResponse/approveNum').text
-		returnCode = res.xpath('//getTokenAndApproveResponse/returnCode').text
+		returnCode = '000' # res.xpath('//getTokenAndApproveResponse/returnCode').text
 		userId = res.xpath('//getTokenAndApproveResponse/customerId').text
 
 		@participant = Registration.find_by(id: userId.to_i)
