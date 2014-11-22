@@ -15,9 +15,9 @@ class PaymentsController < ApplicationController
 
 	def create
 		participant = Registration.find_by(email: params[:email])
-		redirect_to pay_url,:flash => {error: 'Error! Unable to find email. Please fill in registration form first'} and return if participant.nil?		
+		redirect_to pay_url,:flash => {error: 'Error! Unable to find email. Please fill in registration form first.'} and return if participant.nil?		
 		if participant.payed?
-			redirect_to pay_url,:flash => {error: 'Error! Our records show you already payed'} and return
+			redirect_to pay_url,:flash => {error: 'Error! Our records show you already payed. Contact us with reference number ' + participant.id.to_s} and return
 		end
 
 		@result = participant		
@@ -142,6 +142,7 @@ class PaymentsController < ApplicationController
 		@pay_res = res
 
 		if returnCode != '000'
+			PaymentConfirmation.confirmation_unsucessful(@participant).deliver
 			redirect_to pay_url,:flash => {error: "Error! Couldn't complete payment, please try again later"} and return
 		else
 			@participant.payed = true
