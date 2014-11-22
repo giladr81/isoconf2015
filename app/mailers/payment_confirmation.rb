@@ -5,7 +5,7 @@ class PaymentConfirmation < ActionMailer::Base
   	@roomType = participant.accommodationType
   	@roomPrice = 0
   	@confPrice = 660
-  	
+
 	case @roomType
 	when 'Twin Room'
 		@roomPrice = 1065
@@ -31,7 +31,8 @@ class PaymentConfirmation < ActionMailer::Base
   	@payed_user = participant
   	mail(to: "giladrainer@gmail.com",
   		 from: "isotopes2015@conferences-travel-nevet.com",
-  		 subject: 'Isotopes 2015 - Payment failure')
+  		 subject: 'Isotopes 2015 - Payment failure',
+  		 tag: "payment-failure")
   end
 
 end

@@ -4,7 +4,7 @@ Isotopes 2015 Conference
 <%= @payed_user.title %> <%= @payed_user.lastName %> <%= @payed_user.firstName %>,
 You have successfully signed up to Isotopes 2015 conference!
 Here is a summary of your registration:
-
-TODO: insert list here
+Room type and fee: <% if @roomPrice > 0 %> <%= @roomType %>, <%= @roomPrice %> € (Euro) <% else %>Not Applicable<% end %>
+Conference participation fee: <%= @confPrice %><% if not @confPrice.instance_of? String %> € (Euro)<% end %>
 
 We look forward to seeing you!
