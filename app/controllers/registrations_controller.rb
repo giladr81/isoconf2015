@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-	before_action :authenticate_user!, only: [:index, :show]
+	before_action :authenticate_user!, only: [:index, :show, :update, :edit]
 
 	def index
 		@results = Registration.all
@@ -35,7 +35,7 @@ class RegistrationsController < ApplicationController
 	def create
 		@form = Registration.new(form_params)
 		if @form.save
-			flash[:success] = 'Details saved! Thank you for your participation.'
+			flash[:success] = 'Details saved! Please note that registration is complete only upon payment.'
 			redirect_to root_url
 		else
 			render 'new'
