@@ -1,7 +1,7 @@
 <% provide(:title, 'Payment') %>
 <h3>Payment</h3>
 
-<p style="font-weight:bold">The registration is not complete until full payment has been provided.
+<p style="font-weight:bold">Registration is not complete until full payment has been provided.
 
 <% if user_signed_in?%>
 	<%= form_tag("/payments/", method: "post") do %>
@@ -15,7 +15,6 @@
 <p>Title of payment: Isotopes 2015 conference<br />
 	Account Name: Aviation Links LTD<br />
 	Bank Name: Bank Hapoalim B.M.<br />
-	<!-- Bank No': 12<br / -->
 	Address: 23 Menahem Begin St., Tel Aviv, Israel<br />
 	Branch No.: 159<br />
 	IBAN: IL08-0121-5900-0000-0186-889<br />

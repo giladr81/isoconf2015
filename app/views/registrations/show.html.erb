@@ -6,6 +6,11 @@
 		First Name: <%= @results.firstName %><br />
 		Last Name: <%= @results.lastName %><br />
 	</p>
+	<% if @results.payed == true %>
+		<p style="font-weight: bold;">
+			Please note! Participant already paid!
+		</p>
+	<% end %>
 	<%= link_to 'Edit participant details', edit_registration_path(@results) %> | 
 	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 <% else %>

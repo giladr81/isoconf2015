@@ -16,8 +16,16 @@ class PaymentsController < ApplicationController
 	def create
 		participant = Registration.find_by(email: params[:email])
 		redirect_to pay_url,:flash => {error: 'Error! Unable to find email. Please fill in registration form first.'} and return if participant.nil?		
-		if participant.payed?
-			redirect_to pay_url,:flash => {error: 'Error! Our records show you already payed. Contact us with reference number ' + participant.id.to_s} and return
+		redirect_to pay_url,:flash => {error: 'Error! Our records show you already payed. Please contact us with reference number ' + participant.id.to_s} and return if participant.payed?
+
+		if not participant.extraNightsBefoe.nil?
+			nightsBefore = (Date.new(2015, 6, 21) - participant.extraNightsBefoe).to_i
+			@moreNightsBefore = nightsBefore
+		end
+
+		if not participant.extraNightsAfter.nil?
+			nightsAfter = (participant.extraNightsAfter - (Date.new(2015, 6, 26))).to_i
+			@moreNightsAfter = nightsAfter
 		end
 
 		@result = participant		
@@ -26,17 +34,28 @@ class PaymentsController < ApplicationController
 		when 'Twin Room'
 			@roomPrice = 1065
 			@confPrice = 'Already included'
+			@moreNightsBeforeTotal = nightsBefore * 100
+			@moreNightsAfterTotal = nightsAfter * 100
 		when 'Single Room'
 			@roomPrice = 1395
 			@confPrice = 'Already included'
+			@moreNightsBeforeTotal = nightsBefore * 100
+			@moreNightsAfterTotal = nightsAfter * 100
 		when 'Double Room'
 			@roomPrice = 1565
 			@confPrice = 'Already included'
+			@moreNightsBeforeTotal = nightsBefore * 100
+			@moreNightsAfterTotal = nightsAfter * 100
 		when 'Prima Single Room'
 			@roomPrice = 490
+			@moreNightsBeforeTotal = nightsBefore * 100
+			@moreNightsAfterTotal = nightsAfter * 100
 		when 'Prima Double Room'
 			@roomPrice = 280*2
+			@moreNightsBeforeTotal = nightsBefore * 100
+			@moreNightsAfterTotal = nightsAfter * 100
 		end
+
 		
 		# @tours = {jerusalem: { going: @result.jerusalem_tour?, name: "Jerusalem & Bethlehem Tour", participants: @result.jerusalem_participants},
 		# 		  deadsea:   { going: @result.deadsea_tour?, name: "Dead Sea & Masada Tour", participants: @result.deadsea_participants},
@@ -46,9 +65,9 @@ class PaymentsController < ApplicationController
 		# calcToursPrice(@tours)
 
 		if @confPrice.instance_of? String
-			@totalPrice = (@roomPrice + @toursPrice)
+			@totalPrice = (@roomPrice + @toursPrice + @moreNightsBeforeTotal + @moreNightsAfterTotal)
 		else
-			@totalPrice = (@roomPrice + @confPrice + @toursPrice)
+			@totalPrice = (@confPrice +  @roomPrice + @toursPrice + @moreNightsBeforeTotal + @moreNightsAfterTotal)
 		end
 
 		req = Nokogiri::XML::Builder.new do |xml|
@@ -161,6 +180,8 @@ class PaymentsController < ApplicationController
 		@roomPrice = 0
 		@toursPrice = 0
 		@totalPrice = 0
+		@moreNightsBefore = 0
+		@moreNightsAfter = 0
 		@tours
 	end
 

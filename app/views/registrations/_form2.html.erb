@@ -83,10 +83,10 @@
 
 	<div style="padding-top:20px;">
 		<span style="font-weight:bold;">I would need extra nights before June 21st, from:</span>
-		<%= f.date_field :extraNightsBefoe %>
+		<%= f.date_field :extraNightsBefoe, max: Date.new(2015,6,20) %>
 
 		<span style="font-weight:bold;">I would need extra nights after June 26th, until:</span>
-		<%= f.date_field :extraNightsAfter %>
+		<%= f.date_field :extraNightsAfter, min: Date.new(2015,6,27) %>
 	</div>
 
 	<div style="font-weight: bold; padding-top:20px;">I would like to participate in the following activities / tours:</div>
