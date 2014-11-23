@@ -5,11 +5,22 @@
 <h4><%= @result.email %></h4>
 <ol>
 	<li>
-		<span style="font-weight:bold;">Room type:</span> <%= @roomType %>,
+		<span style="font-weight:bold;">Hotel and room type:</span>
+			<% if @roomType == 'Twin Room' %>
+				Crowne Plaza Jerusalem - Twin room,
+			<% elsif @roomType == 'Single Room' %>
+				Crowne Plaza Jerusalem - Single room,
+			<% elsif @roomType == 'Double Room' %>
+				Crowne Plaza Jerusalem - Double room,
+			<% elsif @roomType == 'Prima Single Room' %>
+				Prima Park Jerusalem - Single room,
+			<% elsif @roomType == 'Prima Double Room' %>
+				Prima Park Jerusalem - Double room,
+			<% end %><br />
 		<span style="font-weight:bold;">Price:</span> <%= @roomPrice %> € (Euro)
 	</li>
 	<% if user_signed_in? %>
-		<% if @moreNightsBefore > 0 and @roomType != 'No Accommodation' %>
+		<% if @moreNightsBeforeTotal > 0 and @roomType != 'No Accommodation' %>
 			<li>
 				<span style="font-weight:bold;">Extra Nights before conference:</span>
 				<%= @moreNightsBefore %>, 
@@ -17,10 +28,10 @@
 			</li>
 		<% end %>
 
-		<% if @moreNightsAfter > 0 and @roomType != 'No Accommodation' %>
+		<% if @moreNightsAfterTotal > 0 and @roomType != 'No Accommodation' %>
 			<li>
 				<span style="font-weight:bold;">Extra Nights after conference:</span>
-			 	<%= @moreNightsAfter %>, 
+			 	<%= @moreNightsAfter %>,
 			 	<span style="font-weight:bold;">Total Price:</span> <%= @moreNightsAfterTotal %> € (Euro)
 			</li>
 		<% end %>

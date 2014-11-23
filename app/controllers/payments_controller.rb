@@ -5,6 +5,11 @@ class PaymentsController < ApplicationController
 	@approveNum = ''
 	@returnCode = ''
 
+	PLAZA_SINGLE = 150
+	PLAZA_DOUBLE = 165
+	PRIMA_SINGLE = 115
+	PRIMA_DOUBLE = 125
+
 	def index
 		redirect_to pay_url
 	end
@@ -38,26 +43,24 @@ class PaymentsController < ApplicationController
 		when 'Twin Room'
 			@roomPrice = 1065
 			@confPrice = 'Already included'
-			@moreNightsBeforeTotal = nightsBefore * 100
-			@moreNightsAfterTotal = nightsAfter * 100
 		when 'Single Room'
 			@roomPrice = 1395
 			@confPrice = 'Already included'
-			@moreNightsBeforeTotal = nightsBefore * 100
-			@moreNightsAfterTotal = nightsAfter * 100
+			@moreNightsBeforeTotal = nightsBefore * PLAZA_SINGLE
+			@moreNightsAfterTotal = nightsAfter * PLAZA_SINGLE
 		when 'Double Room'
 			@roomPrice = 1565
 			@confPrice = 'Already included'
-			@moreNightsBeforeTotal = nightsBefore * 100
-			@moreNightsAfterTotal = nightsAfter * 100
+			@moreNightsBeforeTotal = nightsBefore * PLAZA_DOUBLE * 2
+			@moreNightsAfterTotal = nightsAfter * PLAZA_DOUBLE * 2
 		when 'Prima Single Room'
 			@roomPrice = 490
-			@moreNightsBeforeTotal = nightsBefore * 100
-			@moreNightsAfterTotal = nightsAfter * 100
+			@moreNightsBeforeTotal = nightsBefore * PRIMA_SINGLE
+			@moreNightsAfterTotal = nightsAfter * PRIMA_SINGLE
 		when 'Prima Double Room'
 			@roomPrice = 280*2
-			@moreNightsBeforeTotal = nightsBefore * 100
-			@moreNightsAfterTotal = nightsAfter * 100
+			@moreNightsBeforeTotal = nightsBefore * PRIMA_DOUBLE * 2
+			@moreNightsAfterTotal = nightsAfter * PRIMA_DOUBLE * 2
 		when 'No Accommodation'
 			@moreNightsBeforeTotal = 0
 			@moreNightsAfterTotal = 0
@@ -88,14 +91,13 @@ class PaymentsController < ApplicationController
 							xml.tz_Number(participant.passport.to_s) # fill in
 							xml.club('0')
 							xml.confirmation_Source('0')
-							xml.action_Type('5')
+							xml.action_Type('4')
 							xml.card_Reader('2')
 							xml.client_Name(participant.title + ' ' + participant.lastName + ' ' + participant.firstName)
 							xml.host('http://isotopes2015.conferences-travel-nevet.com/payments/confpay/')
-							# xml.host('http://requestb.in/1mtejc11')
 							xml.company_Key('8fgU0hk2sG+AyzVb06TtTg==')
 							xml.stars('0')
-							xml.reader_Data('2')
+							xml.reader_Data('0')
 							xml.currency('1') # check which is euro
 							xml.total_Pyment((@totalPrice*100).to_s)
 							xml.purchase_Type('1')
@@ -141,11 +143,11 @@ class PaymentsController < ApplicationController
 		  	'xmlns:soap12' => "http://www.w3.org/2003/05/soap-envelope") {
 			xml.send("soap12:Body") {
 					xml.getTokenAndApprove('xmlns' => "http://tempuri.org/") {
-						xml.uid(token) # fill in
+						xml.uid(token)
 						xml.approveNum()
 						xml.returnCode()
-						xml.customerId() # check
-						xml.validDate() # check
+						xml.customerId()
+						xml.validDate()
 						xml.cardType()
 						}
 					}
