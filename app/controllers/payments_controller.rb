@@ -66,13 +66,16 @@ class PaymentsController < ApplicationController
 			@moreNightsAfterTotal = 0
 		end
 
-		
 		# @tours = {jerusalem: { going: @result.jerusalem_tour?, name: "Jerusalem & Bethlehem Tour", participants: @result.jerusalem_participants},
 		# 		  deadsea:   { going: @result.deadsea_tour?, name: "Dead Sea & Masada Tour", participants: @result.deadsea_participants},
 		# 		  nazareth:  { going: @result.nazareth_tour?, name: "Nazareth & Sea of Galilee Tour", participants: @result.nazareth_participants},
 		# 		  caesarea:  { going: @result.caesarea?, name: "Caesarea, Acre & Rosh HaNikra Tour", participants: @result.caesarea_participants}
 		# 		 }
 		# calcToursPrice(@tours)
+		
+		if @roomType == 'No Accommodation'
+			calc_single(@result)
+		end
 
 		if @confPrice.instance_of? String
 			@totalPrice = (@roomPrice + @toursPrice + @moreNightsBeforeTotal + @moreNightsAfterTotal)
@@ -132,7 +135,6 @@ class PaymentsController < ApplicationController
 
 		render 'show'
 	end
-
 
 	def confpay
 		token = params[:params]
@@ -200,7 +202,24 @@ class PaymentsController < ApplicationController
 		@moreNightsBeforeTotal = 0
 		@moreNightsAfterTotal = 0
 
-		@tours
+		@singleDays = 0
+	end
+
+	def calc_single(participant)
+
+		if participant.June22 == true
+			@singleDays += 1
+		end
+		if participant.June23 == true
+			@singleDays += 1
+		end
+		if participant.June24 == true
+			@singleDays += 1
+		end
+		if participant.June25 == true
+			@singleDays += 1
+		end
+		@confPrice = @singleDays * 140
 	end
 
 	# def calcToursPrice(tours)

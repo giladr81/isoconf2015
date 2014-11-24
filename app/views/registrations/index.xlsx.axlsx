@@ -33,6 +33,27 @@ wb = xlsx_package.workbook
 	  end
 	end
 
+	wb.add_worksheet(name: "General Info") do |sheet|
+		sheet.add_row ["No'", "Title", "First Name", "Last Name", "E-mail",
+						"Passport No.", "Country", "Citizenship",
+	  				    "Accommodation Type", "Double Room Shared With", "Name of accompanying spouse",
+						"Twin room shared with"
+	  				    "Extra Nights Before", "Extra Nights After",
+	  				    "Special Requests", 
+	  				   ], :style=>bold_text
+
+	  @results.each do |result|
+	    sheet.add_row [result.id, 
+	    			   result.title, result.firstName, result.lastName, result.email,
+	    			   result.passport, result.country, result.citizenship,
+	    			   result.accommodationType, result.doubleRoomShare, result.accompaniedBy,
+	    			   :twin_share_with
+	    			   result.extraNightsBefoe, result.extraNightsAfter,
+	    			   result.specialRequests
+	    			  ]
+
+
+
 	wb.add_worksheet(name: "All") do |sheet|
 		sheet.add_row ["No'", "Title", "First Name", "Last Name", "E-mail",
 					   "Institutional Affiliation",

@@ -75,6 +75,22 @@
 	<%= f.radio_button :accommodationType, "No Accommodation" %>
 	<%= f.label :accommodationType_no_accomodation, "No Accommodation", class: 'radios_checks_label' %><br />
 
+	<div style="font-weight: bold; margin-top: 20px; margin-bottom: 5px;">
+		One day participation in conference - please choose dates:
+	</div>
+
+	<%= f.check_box :June22 %>
+	<%= f.label(:June22, "June 22nd, 2015", class: 'radios_checks_label') %><br />
+	
+	<%= f.check_box :June23 %>
+	<%= f.label(:June23, "June 23rd, 2015", class: 'radios_checks_label') %><br />
+	
+	<%= f.check_box :June24 %>
+	<%= f.label(:June24, "June 24th, 2015", class: 'radios_checks_label') %><br />
+	
+	<%= f.check_box :June25 %>
+	<%= f.label(:June25, "June 25th, 2015", class: 'radios_checks_label') %><br />
+
 	<div style="font-weight: bold; margin-top: 20px; margin-bottom: 5px;">I would like to have:</div>
 	<%= f.check_box :presentationPoster %> 
 	<%= f.label(:presentationPoster, "Poster presentation", class: 'radios_checks_label') %><br />

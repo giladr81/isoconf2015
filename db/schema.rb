@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122095000) do
+ActiveRecord::Schema.define(version: 20141123193919) do
 
   create_table "registrations", force: true do |t|
     t.string   "title"
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(version: 20141122095000) do
     t.string   "PrimaSpouseCountry"
     t.boolean  "payed"
     t.string   "credit2000Approve"
+    t.boolean  "June22"
+    t.boolean  "June23"
+    t.boolean  "June24"
+    t.boolean  "June25"
   end
 
   add_index "registrations", ["email"], name: "index_registrations_on_email", unique: true
