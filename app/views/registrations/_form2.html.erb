@@ -158,7 +158,9 @@
 
 	<%= f.radio_button :PaymentMethod, "Bank transfer" %>
 	<%= f.label :PaymentMethod_bank_transfer, "Bank transfer", class: 'radios_checks_label' %>
-	<div style="margin-left:25px;">Please note! Registration is not complete until full payment has been provided. Please send transfer confirmation to organizing committee. You will receive final approval by email when transfer confirmed.</div>
+	<div style="margin-left:25px;">Please note registration is not complete until full payment has been provided.<br />
+		Please send transfer confirmation to organizing committee to <%= mail_to 'galital@aviation-links.co.il' %>. You will receive final approval by email when transfer confirmed.
+	</div>
 
 	<br />
 	<%= f.label :specialRequests, "Special requests:" %>
