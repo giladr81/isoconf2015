@@ -22,6 +22,7 @@ class PaymentsController < ApplicationController
 		participant = Registration.find_by(email: params[:email])
 		redirect_to pay_url,:flash => {error: 'Error! Unable to find email. Please fill in registration form first.'} and return if participant.nil?		
 		redirect_to pay_url,:flash => {error: 'Error! Our records show you already payed. Please contact us with reference number ' + participant.id.to_s} and return if participant.payed?
+		redirect_to pay_url,:flash => {error: 'Error! You chose bank transfer as payment method. Please contact <a href="mailto:galital@aviation-links.co.il">galital@aviation-links.co.il</a>'.html_safe} and return if participant.PaymentMethod == 'Bank transfer'
 
 		if not participant.extraNightsBefoe.nil?
 			nightsBefore = (Date.new(2015, 6, 21) - participant.extraNightsBefoe).to_i

@@ -10,6 +10,7 @@ class Registration < ActiveRecord::Base
 	validates :passport, presence: true
 	validates :institutionalAffiliation, presence: true
 	validates :accommodationType, presence: true
+	validates :PaymentMethod, presence: true
 
 	def self.to_csv(options = {})
 		CSV.generate(options) do |csv|

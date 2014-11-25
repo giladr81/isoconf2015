@@ -24,7 +24,7 @@
 	<%= f.label :institutionalAffiliation, "Institutional affiliation" %><span style="font-weight:bold"><font color="red"> *</font></span>
 	<%= f.text_field :institutionalAffiliation, class: 'details' %>
 
-	<%= f.label :accommodationType, "I would like to be accommodated in" %><br />
+	<%= f.label :accommodationType, "I would like to be accommodated in" %><font color="red"> *</font><br />
 	<%= f.radio_button :accommodationType, "Single Room" %>
 	<%= f.label :accommodationType_single_room, "Single Room", class: 'radios_checks_label' %><br />
 	
@@ -150,6 +150,15 @@
 
 	<%= f.label :caesarea_participants, "Number of participants" %>
 	<%= f.number_field :caesarea_participants, id: "share_number" %>
+	
+	<div style="font-weight: bold; padding-top:20px;">Payment Method:<font color="red"> *</font></div>
+	
+	<%= f.radio_button :PaymentMethod, "Credit card" %>
+	<%= f.label :PaymentMethod_credit_card, "Credit card", class: 'radios_checks_label' %><br />
+
+	<%= f.radio_button :PaymentMethod, "Bank transfer" %>
+	<%= f.label :PaymentMethod_bank_transfer, "Bank transfer", class: 'radios_checks_label' %>
+	<div style="margin-left:25px;">Please note! Registration is not complete until full payment has been provided. Please send transfer confirmation to organizing committee. You will receive final approval by email when transfer confirmed.</div>
 
 	<br />
 	<%= f.label :specialRequests, "Special requests:" %>
