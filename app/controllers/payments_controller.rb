@@ -102,7 +102,7 @@ class PaymentsController < ApplicationController
 							xml.company_Key('gcv7KUX2LpOFNwpahmSvmQ==')
 							xml.stars('0')
 							xml.reader_Data('0')
-							xml.currency('1') # check which is euro
+							xml.currency('3') # check which is euro
 							xml.total_Pyment((@totalPrice*100).to_s)
 							xml.purchase_Type('1')
 							xml.uID('0')
