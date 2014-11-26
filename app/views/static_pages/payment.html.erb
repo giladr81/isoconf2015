@@ -3,12 +3,10 @@
 
 <p style="font-weight:bold">Registration is not complete until full payment has been provided.
 
-<% if user_signed_in?%>
-	<%= form_tag("/payments/", method: "post") do %>
-	  <%= label_tag :email, "Please fill in the email you provided in the registration form:" %>
-  	  <%= email_field_tag :email, nil, size: 40 %>
-	  <%= submit_tag("Search") %>
-	<% end %>
+<%= form_tag("/payments/", method: "post") do %>
+  <%= label_tag :email, "Please fill in the email you provided in the registration form:" %>
+	  <%= email_field_tag :email, nil, size: 40 %>
+  <%= submit_tag("Search") %>
 <% end %>
 </p>
 

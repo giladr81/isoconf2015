@@ -21,33 +21,31 @@
 		<span style="font-weight:bold;">Price:</span> <%= @roomPrice %> € (Euro)
 	</li>
 	<% end %>
-	<% if user_signed_in? %>
-		<% if @moreNightsBeforeTotal > 0 and @roomType != 'No Accommodation' %>
-			<li>
-				<span style="font-weight:bold;">Extra Nights before conference:</span>
-				<%= @moreNightsBefore %>, 
-				<span style="font-weight:bold;">Total Price:</span> <%= @moreNightsBeforeTotal %> € (Euro)
-			</li>
-		<% end %>
+	<% if @moreNightsBeforeTotal > 0 and @roomType != 'No Accommodation' %>
+		<li>
+			<span style="font-weight:bold;">Extra Nights before conference:</span>
+			<%= @moreNightsBefore %>, 
+			<span style="font-weight:bold;">Total Price:</span> <%= @moreNightsBeforeTotal %> € (Euro)
+		</li>
+	<% end %>
 
-		<% if @moreNightsAfterTotal > 0 and @roomType != 'No Accommodation' %>
-			<li>
-				<span style="font-weight:bold;">Extra Nights after conference:</span>
-			 	<%= @moreNightsAfter %>,
-			 	<span style="font-weight:bold;">Total Price:</span> <%= @moreNightsAfterTotal %> € (Euro)
-			</li>
-		<% end %>
-		<% if @singleDays > 0 %>
-			<li>
-				<span style="font-weight:bold;">Single days particiaption:</span>
-				<ul>
-					<% if @result.June22 == true %><li>June 22nd, 2015</li><% end %>
-					<% if @result.June23 == true %><li>June 23nd, 2015</li><% end %>
-					<% if @result.June24 == true %><li>June 24nd, 2015</li><% end %>
-					<% if @result.June25 == true %><li>June 25nd, 2015</li><% end %>
-				</ul>
-			</li>
-		<% end %>
+	<% if @moreNightsAfterTotal > 0 and @roomType != 'No Accommodation' %>
+		<li>
+			<span style="font-weight:bold;">Extra Nights after conference:</span>
+		 	<%= @moreNightsAfter %>,
+		 	<span style="font-weight:bold;">Total Price:</span> <%= @moreNightsAfterTotal %> € (Euro)
+		</li>
+	<% end %>
+	<% if @singleDays > 0 %>
+		<li>
+			<span style="font-weight:bold;">Single days particiaption:</span>
+			<ul>
+				<% if @result.June22 == true %><li>June 22nd, 2015</li><% end %>
+				<% if @result.June23 == true %><li>June 23nd, 2015</li><% end %>
+				<% if @result.June24 == true %><li>June 24nd, 2015</li><% end %>
+				<% if @result.June25 == true %><li>June 25nd, 2015</li><% end %>
+			</ul>
+		</li>
 	<% end %>
 
 	<li>

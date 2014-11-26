@@ -42,8 +42,8 @@
 		<!-- %= f.label :doubleRoomShare, "I am planning to be accompanied by" % -->
 		<!-- %= f.number_field :accompaniedBy, id: "share_number" % -->
 		I am planning to be accompanied by person. 
-		Please provide the name of accompanying spouse you plan to share the room with:<br />
-		<%= f.label :spouse_name, "Name of accompanying spouse" %>
+		Please provide the name of accompanying person you plan to share the room with:<br />
+		<%= f.label :spouse_name, "Name of accompanying person" %>
 		<%= f.text_field :spouse_name, class: 'details' %>
 		<%= f.label :spouse_passport, "Passport number" %>
 		<%= f.text_field :spouse_passport, class: 'details' %>
@@ -61,8 +61,8 @@
 				<!-- %= f.label :doubleRoomShare, "I am planning to be accompanied by" % -->
 				<!-- %= f.number_field :accompaniedBy, id: "share_number" % -->
 				I am planning to be accompanied by person. 
-				Please provide the name of accompanying spouse you plan to share the room with:<br />
-				<%= f.label :PrimaSpouse, "Name of accompanying spouse" %>
+				Please provide the name of accompanying person you plan to share the room with:<br />
+				<%= f.label :PrimaSpouse, "Name of accompanying person" %>
 				<%= f.text_field :PrimaSpouse, class: 'details' %>
 				<%= f.label :PrimaSpousePassport, "Passport number" %>
 				<%= f.text_field :PrimaSpousePassport, class: 'details' %>
@@ -76,7 +76,8 @@
 	<%= f.label :accommodationType_no_accomodation, "No Accommodation", class: 'radios_checks_label' %><br />
 
 	<div style="font-weight: bold; margin-top: 20px; margin-bottom: 5px;">
-		One day participation in conference - please choose dates:
+		One day participation in conference - please choose dates:<br />
+		<span style="font-size:0.9em;font-weight:normal;">(applicable only when choosing no accommodation)</span>
 	</div>
 
 	<%= f.check_box :June22 %>
@@ -158,7 +159,7 @@
 
 	<%= f.radio_button :PaymentMethod, "Bank transfer" %>
 	<%= f.label :PaymentMethod_bank_transfer, "Bank transfer", class: 'radios_checks_label' %>
-	<div style="margin-left:25px;">Please note registration is not complete until full payment has been provided.<br />
+	<div style="margin-left:25px;">Please note, registration is not complete until full payment has been provided.<br />
 		Please send transfer confirmation to organizing committee to <%= mail_to 'galital@aviation-links.co.il' %>. You will receive final approval by email when transfer confirmed.
 	</div>
 

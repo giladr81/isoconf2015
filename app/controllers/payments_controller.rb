@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
 	@returnCode = ''
 
 	PLAZA_SINGLE = 150
-	PLAZA_DOUBLE = 165
+	PLAZA_DOUBLE = 175
 	PRIMA_SINGLE = 115
 	PRIMA_DOUBLE = 125
 
@@ -52,16 +52,16 @@ class PaymentsController < ApplicationController
 		when 'Double Room'
 			@roomPrice = 1565
 			@confPrice = 'Already included'
-			@moreNightsBeforeTotal = nightsBefore * PLAZA_DOUBLE * 2
-			@moreNightsAfterTotal = nightsAfter * PLAZA_DOUBLE * 2
+			@moreNightsBeforeTotal = nightsBefore * PLAZA_DOUBLE
+			@moreNightsAfterTotal = nightsAfter * PLAZA_DOUBLE
 		when 'Prima Single Room'
 			@roomPrice = 490
 			@moreNightsBeforeTotal = nightsBefore * PRIMA_SINGLE
 			@moreNightsAfterTotal = nightsAfter * PRIMA_SINGLE
 		when 'Prima Double Room'
 			@roomPrice = 280*2
-			@moreNightsBeforeTotal = nightsBefore * PRIMA_DOUBLE * 2
-			@moreNightsAfterTotal = nightsAfter * PRIMA_DOUBLE * 2
+			@moreNightsBeforeTotal = nightsBefore * PRIMA_DOUBLE
+			@moreNightsAfterTotal = nightsAfter * PRIMA_DOUBLE
 		when 'No Accommodation'
 			@moreNightsBeforeTotal = 0
 			@moreNightsAfterTotal = 0
@@ -99,14 +99,14 @@ class PaymentsController < ApplicationController
 							xml.card_Reader('2')
 							xml.client_Name(participant.title + ' ' + participant.lastName + ' ' + participant.firstName)
 							xml.host('http://isotopes2015.conferences-travel-nevet.com/payments/confpay/')
-							xml.company_Key('8fgU0hk2sG+AyzVb06TtTg==')
+							xml.company_Key('gcv7KUX2LpOFNwpahmSvmQ==')
 							xml.stars('0')
 							xml.reader_Data('0')
 							xml.currency('1') # check which is euro
 							xml.total_Pyment((@totalPrice*100).to_s)
 							xml.purchase_Type('1')
 							xml.uID('0')
-							xml.vendor_Name('cus2000')
+							xml.vendor_Name('CUS0686')
 							xml.product_Id(participant.id.to_s) # id of participant
 							xml.return_Code('123')
 							xml.fixed_Amount('0') #check
