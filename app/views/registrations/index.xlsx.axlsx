@@ -35,7 +35,8 @@ wb = xlsx_package.workbook
 	  				    "Accommodation Type", "Double Room Shared With", "Name of accompanying spouse",
 						"Twin room shared with",
 	  				    "Extra Nights Before", "Extra Nights After",
-	  				    "Special Requests", 
+	  				    "Special Requests",
+	  				    "Payed", "Credit 2000 Approval Reference"
 	  				   ], :style=>bold_text
 
 	  @results.each do |result|
@@ -45,7 +46,8 @@ wb = xlsx_package.workbook
 	    			   result.accommodationType, result.doubleRoomShare, result.accompaniedBy,
 	    			   result.twin_share_with,
 	    			   result.extraNightsBefoe, result.extraNightsAfter,
-	    			   result.specialRequests
+	    			   result.specialRequests,
+	    			   result.payed, result.credit2000Approve
 	    			  ]
 	  end
 	end
