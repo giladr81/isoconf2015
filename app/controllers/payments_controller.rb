@@ -9,6 +9,7 @@ class PaymentsController < ApplicationController
 	PLAZA_DOUBLE = 175
 	PRIMA_SINGLE = 115
 	PRIMA_DOUBLE = 125
+	DISCOUNT = 125
 
 	def index
 		redirect_to pay_url
@@ -42,15 +43,15 @@ class PaymentsController < ApplicationController
 		@roomType = participant.accommodationType
 		case @roomType
 		when 'Twin Room'
-			@roomPrice = 1065
+			@roomPrice = 1045 - DISCOUNT
 			@confPrice = 'Already included'
 		when 'Single Room'
-			@roomPrice = 1395
+			@roomPrice = 1375 - DISCOUNT
 			@confPrice = 'Already included'
 			@moreNightsBeforeTotal = nightsBefore * PLAZA_SINGLE
 			@moreNightsAfterTotal = nightsAfter * PLAZA_SINGLE
 		when 'Double Room'
-			@roomPrice = 1565
+			@roomPrice = 1545 - DISCOUNT 
 			@confPrice = 'Already included'
 			@moreNightsBeforeTotal = nightsBefore * PLAZA_DOUBLE
 			@moreNightsAfterTotal = nightsAfter * PLAZA_DOUBLE
@@ -189,7 +190,7 @@ class PaymentsController < ApplicationController
 	private
 
 	def set_prices
-		@confPrice = 660
+		@confPrice = 645 - DISCOUNT
 		@roomType = ""
 		@roomPrice = 0
 		@toursPrice = 0
