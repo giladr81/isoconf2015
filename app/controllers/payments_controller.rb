@@ -67,13 +67,6 @@ class PaymentsController < ApplicationController
 			@moreNightsBeforeTotal = 0
 			@moreNightsAfterTotal = 0
 		end
-
-		# @tours = {jerusalem: { going: @result.jerusalem_tour?, name: "Jerusalem & Bethlehem Tour", participants: @result.jerusalem_participants},
-		# 		  deadsea:   { going: @result.deadsea_tour?, name: "Dead Sea & Masada Tour", participants: @result.deadsea_participants},
-		# 		  nazareth:  { going: @result.nazareth_tour?, name: "Nazareth & Sea of Galilee Tour", participants: @result.nazareth_participants},
-		# 		  caesarea:  { going: @result.caesarea?, name: "Caesarea, Acre & Rosh HaNikra Tour", participants: @result.caesarea_participants}
-		# 		 }
-		# calcToursPrice(@tours)
 		
 		if @roomType == 'No Accommodation'
 			calc_single(@result)
@@ -223,20 +216,4 @@ class PaymentsController < ApplicationController
 		end
 		@confPrice = @singleDays * 140
 	end
-
-	# def calcToursPrice(tours)
-	# 	if tours[:jerusalem]
-	# 	 	@toursPrice = @toursPrice + @tours[:jerusalem][:participants].to_i*100
-	# 	end
-	# 	if tours[:deadsea]
-	# 	 	@toursPrice = @toursPrice + @tours[:deadsea][:participants].to_i*100
-	# 	end
-	# 	if tours[:nazareth]
-	# 	 	@toursPrice = @toursPrice + @tours[:nazareth][:participants].to_i*100
-	# 	end
-	# 	if tours[:caesarea]
-	# 	 	@toursPrice = @toursPrice + @tours[:caesarea][:participants].to_i*100
-	# 	end
-	# end
-
 end
