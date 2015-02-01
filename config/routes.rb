@@ -25,6 +25,7 @@ IsoconfApp::Application.routes.draw do
   match '/pay', to: 'static_pages#payment', via: 'get'
   match '/social', to: 'static_pages#social', via: 'get'
   match '/sponsors', to: 'static_pages#sponsors', via: 'get'
+  match '/abstracts', to: 'static_pages#abstract-submittion', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
