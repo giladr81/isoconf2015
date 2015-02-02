@@ -7,6 +7,7 @@
 	<li class="<%= is_active?(social_path) %>"><%= link_to "Social program", social_path %></li>
 	<li class="<%= is_active?(fees_path) %>"><%= link_to "Registration Fees", fees_path %></li>
 	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Form", new_registration_path %></li>
+	<li class="<%= is_active?(abstracts_path) %>"><%= link_to "Abstract Form", abstracts_path %></li>
 	<% if user_signed_in? %>
 		<li class="<%= is_active?(registrations_path) %>">
 				<%= link_to "Download Reg Form Data", registrations_path, class: "admin" %>
