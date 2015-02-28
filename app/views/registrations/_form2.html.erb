@@ -168,6 +168,9 @@
 	
 	<%= f.radio_button :PaymentMethod, "Credit card" %>
 	<%= f.label :PaymentMethod_credit_card, "Credit card", class: 'radios_checks_label' %><br />
+	<div style="margin-left:25px; color: red; font-weight: bold; font-size:0.85em">
+		After submitting registration form, please click on payment in the side menu to pay and complete registration.
+	</div>
 
 	<%= f.radio_button :PaymentMethod, "Bank transfer" %>
 	<%= f.label :PaymentMethod_bank_transfer, "Bank transfer", class: 'radios_checks_label' %>
