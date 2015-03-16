@@ -9,7 +9,7 @@ IsoconfApp::Application.routes.draw do
   # resources :temp
   devise_for :users
 
-  devise_scope :user do 
+  devise_scope :user do
     root to: 'static_pages#home'
     match '/registrations/user', to: 'devise/registrations#create', via: :post
   end

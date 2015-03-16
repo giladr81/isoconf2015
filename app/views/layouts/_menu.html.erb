@@ -6,15 +6,19 @@
 	<li class="<%= is_active?(organizers_path) %>"><%= link_to "Organizing Committee", organizers_path %></li>
 	<li class="<%= is_active?(social_path) %>"><%= link_to "Social program", social_path %></li>
 	<li class="<%= is_active?(fees_path) %>"><%= link_to "Registration Fees", fees_path %></li>
-	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration Form", new_registration_path %></li>
+	<li class="<%= is_active?(new_registration_path) %>"><%= link_to "Registration + Payment", new_registration_path %></li>
+
+<% if false %>
 	<li class="<%= is_active?(pay_path) %>"><%= link_to "Payment", pay_path %></li>
+<% end %>
+
 	<li class="<%= is_active?(abstracts_path) %>"><%= link_to "Abstract Form", abstracts_path %></li>
 	<% if user_signed_in? %>
 		<li class="<%= is_active?(registrations_path) %>">
 				<%= link_to "Download Reg Form Data", registrations_path, class: "admin" %>
 		</li>
-	<% end %>	
-	
+	<% end %>
+
 	<li class="<%= is_active?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
 
-</ul>	
+</ul>
