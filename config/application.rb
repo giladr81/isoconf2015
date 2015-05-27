@@ -21,6 +21,7 @@ module IsoconfApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.paths << "#{Rails.root}/app/assets/pdf"
 
     config.action_mailer.delivery_method   = :postmark
     config.action_mailer.postmark_settings = { :api_key => ENV['POSTMARK_API_KEY'] }
